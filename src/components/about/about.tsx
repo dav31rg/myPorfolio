@@ -1,9 +1,10 @@
-import meboo from "../../assets/meboo.webp";
 import { motion } from "framer-motion";
 import styles from "./about.module.css";
 
 interface Info {
   info: {
+    avatar: string;
+    cv: string;
     description: string;
     knowledge: string[];
   };
@@ -11,19 +12,29 @@ interface Info {
 
 const About: React.FC<Info> = ({ info }) => {
   return (
-    <div
-      id="about"
+    <motion.div 
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
+      id="about" 
       className={styles.main}
     >
       <section className={styles.row}>
         <div>
-          <img className={styles.image} src={meboo} alt="" />
+          <img className={styles.image} src={info.avatar} alt="" />
         </div>
-
         <div className={styles.container}>
           <h1 className={styles.title}>About me</h1>
           <p className={styles.text}>{info.description}</p>
-          <span>download cv</span>
+          <motion.div 
+            className={styles.button}
+            whileHover={{ scale: 1.3 }}
+            transition={{ type: "spring", damping: 5, stiffness: 100 }}
+          >
+            <a target="_blank" href={`https://${info.cv}`}>
+              download CV
+            </a>
+          </motion.div>
         </div>
       </section>
       <div className={styles.imageContainer}>
@@ -48,7 +59,7 @@ const About: React.FC<Info> = ({ info }) => {
           ))}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
