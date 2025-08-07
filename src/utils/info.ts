@@ -139,7 +139,7 @@ export const info = {
         title: "Software Developer",
         company: "{c} Labs",
         date: "DEC 2023 - MAY 2024",
-        technologies: [react, nextJs, typescript],
+        technologies: [typescript, react, nextJs],
         description:
           "Cooperated in the development of a web and mobile app designed to provide access control services for condominiums and businesses. Actively contributed to product development using React Native for mobile and Next.js for web, and continuously learning about emerging technologies to ensure the delivery of high-quality products.",
       },
@@ -147,7 +147,7 @@ export const info = {
         title: "Junior Web Developer",
         company: "Freelance",
         date: "JUL 2023 - DEC 2023",
-        technologies: [react, typescript, prisma],
+        technologies: [js, react],
         description:
           "Contributed to the Anki.pe project development using ReactJS for hidden kitchen management. Implemented features, collaborated, and closely participated with the team to ensure consistency in project design and functionality.",
       },
