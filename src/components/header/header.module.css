@@ -37,6 +37,8 @@
 }
 
 .navLink {
+  width: 100vw;
+  height: auto;
   text-decoration: none;
   color: var(--background-color-dark);
 }

@@ -74,19 +74,19 @@ const Header: React.FC<HeaderProps> = ({ info }) => {
             ref={menuRef}
           >
             {info.map((item, index) => (
+              <Link
+                  to={getRouterPath(item)}
+                  onClick={handleCloseMenu}
+                  className={styles.navLink}
+                >
               <motion.li
                 whileHover={{ scale: 1.3 }}
                 transition={{ type: "spring", damping: 5, stiffness: 100 }}
                 key={index}
               >
-                <Link
-                  to={getRouterPath(item)}
-                  onClick={handleCloseMenu}
-                  className={styles.navLink}
-                >
+              </motion.li>
                   {item}
                 </Link>
-              </motion.li>
             ))}
           </motion.ul>
         )}
