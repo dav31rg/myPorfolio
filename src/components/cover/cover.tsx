@@ -19,7 +19,7 @@ const Cover: React.FC<Info> = ({ project }) => {
       className={styles.main}
       style={{ backgroundColor: project.backgroundColor }}
     >
-      <h1 style={{ color: project.textColor }}>{project.title}</h1>
+      <h1 className={styles.mainTitle} style={{ color: project.textColor }}>{project.title}</h1>
       <div>
         <img
           src={project.image}
