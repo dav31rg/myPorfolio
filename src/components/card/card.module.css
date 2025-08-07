@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--background-color-light);
+  border-radius: 25px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.padContainer {
+  margin-top: 0.8rem;
+  padding: 1rem;
+}
+
+.leftAlign {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.titleGray {
+  margin: 0;
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.titleOrange {
+  margin: 0;
+  font-size: 1.2rem;
+  color: orange;
+}
+
+.text {
+  margin: 0;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.date {
+  margin: 0;
+  font-size: 1rem;
+  color: orange;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+
+.image {
+  width: 24px;
+  height: 24px;
+}
