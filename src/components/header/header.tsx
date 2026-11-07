@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import hamburger from "../../assets/hamburger.svg";
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";

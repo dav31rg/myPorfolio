@@ -1,6 +1,6 @@
 import Cover from "../cover/cover";
 import styles from "./portfolio.module.css";
-import { motion } from 'framer-motion';
+import { motion } from "motion/react";
 
 interface Info {
   info: {
@@ -17,7 +17,7 @@ const Portfolio: React.FC<Info> = ({ info }) => {
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}   
+      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
       className={styles.main}>
       <h1 className={styles.title}>Recent Portfolio</h1>
       <div className={styles.container}>

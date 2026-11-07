@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import styles from "./about.module.css";
 
 interface Info {
@@ -12,11 +12,11 @@ interface Info {
 
 const About: React.FC<Info> = ({ info }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
-      id="about" 
+      id="about"
       className={styles.main}
     >
       <section className={styles.row}>
@@ -26,7 +26,7 @@ const About: React.FC<Info> = ({ info }) => {
         <div className={styles.container}>
           <h1 className={styles.title}>About me</h1>
           <p className={styles.text}>{info.description}</p>
-          <motion.div 
+          <motion.div
             className={styles.button}
             whileHover={{ scale: 1.3 }}
             transition={{ type: "spring", damping: 5, stiffness: 100 }}

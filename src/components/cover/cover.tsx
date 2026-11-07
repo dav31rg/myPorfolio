@@ -1,6 +1,6 @@
 import styles from "./cover.module.css";
 import github from "../../assets/github.svg";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface Info {
   project: {
