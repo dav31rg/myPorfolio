@@ -1,8 +1,12 @@
-import Card from "../card/card";
+import Card from "../../components/experience-card/experience-card";
 import styles from "./experience.module.css";
 import { motion } from "motion/react";
 
 interface Info {
+  labels: {
+    education: string;
+    workExperience: string;
+  };
   info: {
     education: {
       title: string;
@@ -21,7 +25,7 @@ interface Info {
   };
 }
 
-const Experience: React.FC<Info> = ({ info }) => {
+const Experience: React.FC<Info> = ({ info, labels }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -30,7 +34,7 @@ const Experience: React.FC<Info> = ({ info }) => {
       id="experience"
       className={styles.main}>
       <div id={styles.education} className={styles.flexCol}>
-        <h1 className={styles.title}>Education</h1>
+        <h1 className={styles.title}>{labels.education}</h1>
         {info.education.map((card, idx) => (
           <Card
             key={idx}
@@ -44,7 +48,7 @@ const Experience: React.FC<Info> = ({ info }) => {
       </div>
 
       <div id={styles.experience} className={styles.flexCol}>
-        <h1 className={styles.title}>Work Experience</h1>
+        <h1 className={styles.title}>{labels.workExperience}</h1>
         {info.work.map((card, idx) => (
           <Card
             key={idx}

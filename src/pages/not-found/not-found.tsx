@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import meeboNotFound from "../../assets/meebo-404.webp";
-import styles from "./notFound.module.css";
+import styles from "./not-found.module.css";
 
-const NotFound = () => {
+interface NotFoundProps {
+  labels: {
+    notFoundTitle: string;
+    notFoundMessage: string;
+    home: string;
+  };
+}
+
+const NotFound: React.FC<NotFoundProps> = ({ labels }) => {
   return (
     <section className={styles.main}>
       <motion.div
@@ -12,11 +20,10 @@ const NotFound = () => {
         transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
         className={styles.container}>
         <img className={styles.image} src={meeboNotFound} alt="404 image" />
-        <h1>404 - Page Not Found</h1>
+        <h1>{labels.notFoundTitle}</h1>
         <span>
-          Sorry, the page you are looking for does not exist. Maybe this will
-          help &nbsp;
-          <Link to="/">Home</Link>
+          {labels.notFoundMessage} &nbsp;
+          <Link to="/">{labels.home}</Link>
         </span>
       </motion.div>
     </section>

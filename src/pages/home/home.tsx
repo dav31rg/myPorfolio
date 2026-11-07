@@ -1,7 +1,8 @@
-import styles from "./hero.module.css";
+import styles from "./home.module.css";
 import { motion } from "motion/react";
 
 interface Info {
+  greeting: string;
   info: {
     meebo: string;
     name: string;
@@ -11,7 +12,7 @@ interface Info {
   };
 }
 
-const Hero: React.FC<Info> = ({ info }) => {
+const Hero: React.FC<Info> = ({ info, greeting }) => {
   return (
     <motion.div
       id="home"
@@ -27,7 +28,7 @@ const Hero: React.FC<Info> = ({ info }) => {
           transition={{ type: "spring", damping: 5, stiffness: 100 }}
           className={styles.iam}
         >
-          Hello I'm
+          {greeting}
         </motion.span>
         <div>
           <h1 className={styles.title}>{info.name}</h1>

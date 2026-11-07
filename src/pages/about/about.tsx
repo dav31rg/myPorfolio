@@ -2,6 +2,10 @@ import { motion } from "motion/react";
 import styles from "./about.module.css";
 
 interface Info {
+  labels: {
+    about: string;
+    downloadCv: string;
+  };
   info: {
     avatar: string;
     cv: string;
@@ -10,7 +14,7 @@ interface Info {
   };
 }
 
-const About: React.FC<Info> = ({ info }) => {
+const About: React.FC<Info> = ({ info, labels }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -24,7 +28,7 @@ const About: React.FC<Info> = ({ info }) => {
           <img className={styles.image} src={info.avatar} alt="" />
         </div>
         <div className={styles.container}>
-          <h1 className={styles.title}>About me</h1>
+          <h1 className={styles.title}>{labels.about}</h1>
           <p className={styles.text}>{info.description}</p>
           <motion.div
             className={styles.button}
@@ -32,7 +36,7 @@ const About: React.FC<Info> = ({ info }) => {
             transition={{ type: "spring", damping: 5, stiffness: 100 }}
           >
             <a target="_blank" href={`https://${info.cv}`}>
-              download CV
+              {labels.downloadCv}
             </a>
           </motion.div>
         </div>

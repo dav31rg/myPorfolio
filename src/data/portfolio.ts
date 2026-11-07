@@ -29,8 +29,8 @@ import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";
 import redux from "../assets/redux.svg";
 import sqLite from "../assets/sq-lite.svg";
-import mySql from "../assets/mySql.svg";
-import mongoDB from "../assets/mongoDB.svg";
+import mySql from "../assets/my-sql.svg";
+import mongoDB from "../assets/mongo-db.svg";
 import aws from "../assets/aws.svg";
 import windows from "../assets/windows.svg";
 import projectEatable from "../assets/project-eatable.gif";
@@ -39,8 +39,13 @@ import api from "../assets/api.webp";
 // Icons from:
 // https://github.com/tandpfun/skill-icons?tab=readme-ov-file#icons-list
 
-export const info = {
-  header: ["home", "about", "experience", "projects"],
+const englishInfo = {
+  header: [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+  ],
   personal: {
     meebo: meebo,
     name: "Davel Reymundo Gobea",
@@ -227,3 +232,142 @@ export const info = {
     },
   ],
 };
+
+const spanishInfo = {
+  ...englishInfo,
+  header: [
+    { id: "home", label: "Inicio" },
+    { id: "about", label: "Sobre mí" },
+    { id: "experience", label: "Experiencia" },
+    { id: "projects", label: "Proyectos" },
+  ],
+  personal: {
+    ...englishInfo.personal,
+    role: "Desarrollador Full Stack",
+  },
+  about: {
+    ...englishInfo.about,
+    description:
+      "¡Hola! Soy desarrollador Full Stack e ingeniero electrónico, apasionado por la tecnología. Tengo experiencia desarrollando aplicaciones web, brindando soporte técnico y administrando redes. Disfruto trabajar en equipo, colaborar en proyectos innovadores y aprender continuamente. Me motiva resolver desafíos técnicos y crear soluciones de impacto positivo.",
+  },
+  experience: {
+    work: [
+      {
+        ...englishInfo.experience.work[0],
+        title: "Ingeniero de software I",
+        date: "MAY 2024 - ACTUALIDAD",
+        description:
+          "Trabajo como desarrollador en Tekton Labs, donde contribuyo al diseño y desarrollo de aplicaciones web con tecnologías modernas. Creo interfaces intuitivas y soluciones backend robustas y escalables, cuidando el rendimiento y la experiencia de usuario. También me mantengo al día con las tendencias y buenas prácticas de la industria.",
+      },
+      {
+        ...englishInfo.experience.work[1],
+        title: "Desarrollador de software",
+        date: "DIC 2023 - MAY 2024",
+        description:
+          "Colaboré en el desarrollo de una aplicación web y móvil para brindar servicios de control de acceso a condominios y empresas. Contribuí al producto usando React Native para móviles y Next.js para la web, y aprendí sobre tecnologías emergentes para ofrecer soluciones de calidad.",
+      },
+      {
+        ...englishInfo.experience.work[2],
+        title: "Desarrollador web junior",
+        date: "JUL 2023 - DIC 2023",
+        description:
+          "Contribuí al desarrollo de Anki.pe, un proyecto para la gestión de cocinas ocultas. Implementé funcionalidades y colaboré con el equipo para mantener la coherencia del diseño y el funcionamiento del producto.",
+      },
+      {
+        ...englishInfo.experience.work[3],
+        title: "Especialista de soporte TI",
+        date: "JUN 2017 - MAY 2024",
+        description:
+          "Administré el servidor de impresión y la base de datos, y brindé soporte técnico para computadoras, redes e impresoras. Ayudé a reducir las consultas repetitivas de clientes y a ofrecer una atención oportuna.",
+      },
+      {
+        ...englishInfo.experience.work[4],
+        title: "Ingeniero de soporte",
+        date: "MAY 2015 - MAY 2017",
+        description:
+          "Resolví incidencias de servicio para clientes como IBM, Xerox, Lenovo y Mapfre, brindando atención oportuna. Llegué a ser el segundo ingeniero de soporte con más tickets resueltos.",
+      },
+    ],
+    education: [
+      {
+        ...englishInfo.experience.education[0],
+        title: "Desarrollo web Full Stack",
+        date: "NOV 2022 - JUN 2023",
+        description:
+          "Codeable es un bootcamp intensivo de programación a tiempo completo de seis meses, enfocado en formar desarrolladores web Full Stack. El programa también fortalece el inglés técnico y habilidades blandas como liderazgo, trabajo en equipo, comunicación asertiva y presentaciones efectivas.",
+      },
+      {
+        ...englishInfo.experience.education[1],
+        title: "Desarrollo web (autodidacta)",
+        description:
+          "Durante casi un año de aprendizaje autónomo, seguí la carrera de Desarrollo Web de Platzi. Fortalecí mis bases de desarrollo web y tecnologías frontend mediante ejercicios y proyectos prácticos.",
+      },
+      {
+        ...englishInfo.experience.education[2],
+        title: "Ingeniería electrónica",
+        description: "Título profesional de Ingeniería Electrónica.",
+      },
+    ],
+  },
+  projects: [
+    {
+      ...englishInfo.projects[0],
+      title: "API de simulación de matrícula universitaria",
+      description:
+        "API para registrar y administrar matrículas de estudiantes universitarios, desarrollada con NestJS.",
+    },
+    {
+      ...englishInfo.projects[1],
+      title: "API de simulación de check-in",
+      description: "API que simula el proceso de check-in de una aerolínea.",
+    },
+    {
+      ...englishInfo.projects[2],
+      description:
+        "Aplicación para impulsar a cocineros independientes. Permite consultar, crear y actualizar recetas y consejos de cocina. Desarrollada con React y conectada a una API.",
+    },
+  ],
+};
+
+export const portfolioContent = {
+  en: {
+    ...englishInfo,
+    labels: {
+      greeting: "Hello, I'm",
+      about: "About me",
+      downloadCv: "Download CV",
+      education: "Education",
+      workExperience: "Work Experience",
+      projects: "Recent Projects",
+      notFoundTitle: "404 - Page Not Found",
+      notFoundMessage: "Sorry, the page you are looking for does not exist.",
+      home: "Home",
+      changeLanguage: "Change language to Spanish",
+      navigation: "Main navigation",
+      toggleMenu: "Toggle menu",
+      darkTheme: "Switch to dark mode",
+      lightTheme: "Switch to light mode",
+    },
+  },
+  es: {
+    ...spanishInfo,
+    labels: {
+      greeting: "Hola, soy",
+      about: "Sobre mí",
+      downloadCv: "Descargar CV",
+      education: "Educación",
+      workExperience: "Experiencia laboral",
+      projects: "Proyectos recientes",
+      notFoundTitle: "404 - Página no encontrada",
+      notFoundMessage: "Lo sentimos, la página que buscas no existe.",
+      home: "Inicio",
+      changeLanguage: "Cambiar idioma a inglés",
+      navigation: "Navegación principal",
+      toggleMenu: "Abrir o cerrar el menú",
+      darkTheme: "Cambiar al modo oscuro",
+      lightTheme: "Cambiar al modo claro",
+    },
+  },
+};
+
+export type Locale = keyof typeof portfolioContent;

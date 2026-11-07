@@ -1,4 +1,4 @@
-import styles from "./card.module.css";
+import styles from "./experience-card.module.css";
 
 interface CardProps {
   title: string;

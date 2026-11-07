@@ -1,8 +1,9 @@
-import styles from "./cover.module.css";
+import styles from "./project-card.module.css";
 import github from "../../assets/github.svg";
 import { motion } from "motion/react";
 
 interface Info {
+  theme: "light" | "dark";
   project: {
     title: string;
     description: string;
@@ -13,20 +14,27 @@ interface Info {
     technologies: Array<string>;
   };
 }
-const Cover: React.FC<Info> = ({ project }) => {
+const Cover: React.FC<Info> = ({ project, theme }) => {
+  const textColor = theme === "dark" ? "#ffffff" : project.textColor;
+
   return (
     <div
       className={styles.main}
-      style={{ backgroundColor: project.backgroundColor }}
+      style={{
+        backgroundColor:
+          theme === "dark" ? "var(--surface-primary)" : project.backgroundColor,
+      }}
     >
-      <h1 className={styles.mainTitle} style={{ color: project.textColor }}>{project.title}</h1>
+      <h1 className={styles.mainTitle} style={{ color: textColor }}>
+        {project.title}
+      </h1>
       <div>
         <img
           src={project.image}
           className={styles.image}
           alt={`${project.title} image`}
         />
-        <p className={styles.description} style={{ color: project.textColor }}>
+        <p className={styles.description} style={{ color: textColor }}>
           {project.description}
         </p>
         <ul className={styles.list}>

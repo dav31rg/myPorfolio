@@ -10,6 +10,20 @@
   z-index: 1000;
 }
 
+.light nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -37,14 +51,26 @@
 }
 
 .navLink {
-  width: 100vw;
-  height: auto;
+  display: block;
   text-decoration: none;
   color: var(--background-color-dark);
 }
 
 .mobile {
   display: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.languageButton {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--background-color-dark);
+  border-radius: 0.4rem;
+  color: var(--background-color-dark);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
 }
 
 .menuMobile {
@@ -57,7 +83,6 @@
   }
   .mobile {
     display: block;
-    margin-right: 1rem;
     cursor: pointer;
   }
   .menuMobile {
@@ -72,8 +97,7 @@
     padding: 1rem;
     list-style: none;
   }
-  .listMobile {
-    list-style: none;
+  .menuMobile .navLink {
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;

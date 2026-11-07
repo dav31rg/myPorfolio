@@ -1,27 +1,56 @@
-import About from "./components/about/about";
-import Experience from "./components/experience/experience";
+import About from "./pages/about/about";
+import Experience from "./pages/experience/experience";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
-import Hero from "./components/hero/hero";
-import NotFound from "./components/notFound/notFound";
-import Portfolio from "./components/portfolio/portfolio";
+import Hero from "./pages/home/home";
+import NotFound from "./pages/not-found/not-found";
+import Portfolio from "./pages/projects/projects";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { info } from "./utils/info";
-import "./App.css";
+import { useEffect, useState } from "react";
+import { portfolioContent, type Locale } from "./data/portfolio";
 
 function App() {
+  const [locale, setLocale] = useState<Locale>("en");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const content = portfolioContent[locale];
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+
   return (
     <BrowserRouter>
-      <Header info={info.header} />
+      <Header
+        info={content.header}
+        locale={locale}
+        onLocaleChange={setLocale}
+        changeLanguageLabel={content.labels.changeLanguage}
+        theme={theme}
+        onThemeChange={() => setTheme((current) => current === "light" ? "dark" : "light")}
+        themeButtonLabel={theme === "light" ? content.labels.darkTheme : content.labels.lightTheme}
+        navigationLabel={content.labels.navigation}
+        toggleMenuLabel={content.labels.toggleMenu}
+      />
       <Routes>
-        <Route path="/" element={<Hero info={info.personal} />} />
-        <Route path="/about" element={<About info={info.about} />} />
         <Route
-          path="/experience"
-          element={<Experience info={info.experience} />}
+          path="/"
+          element={
+            <main>
+              <Hero info={content.personal} greeting={content.labels.greeting} />
+              <About info={content.about} labels={content.labels} />
+              <Experience info={content.experience} labels={content.labels} />
+              <Portfolio
+                info={content.projects}
+                title={content.labels.projects}
+                theme={theme}
+              />
+            </main>
+          }
         />
-        <Route path="/projects" element={<Portfolio info={info.projects} />} />
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="*"
+          element={<NotFound labels={content.labels} />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

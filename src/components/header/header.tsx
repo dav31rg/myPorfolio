@@ -2,30 +2,48 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import hamburger from "../../assets/hamburger.svg";
 import styles from "./header.module.css";
-import { Link } from "react-router-dom";
+import type { Locale } from "../../data/portfolio";
 
 interface HeaderProps {
-  info: string[];
+  info: Array<{ id: string; label: string }>;
+  locale: Locale;
+  onLocaleChange: (locale: Locale) => void;
+  changeLanguageLabel: string;
+  navigationLabel: string;
+  toggleMenuLabel: string;
+  theme: "light" | "dark";
+  onThemeChange: () => void;
+  themeButtonLabel: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ info }) => {
+const Header: React.FC<HeaderProps> = ({
+  info,
+  locale,
+  onLocaleChange,
+  changeLanguageLabel,
+  navigationLabel,
+  toggleMenuLabel,
+  theme,
+  onThemeChange,
+  themeButtonLabel,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLUListElement | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
 
-  const handelMenuView = () => {
+  const handleMenuView = () => {
     setIsMenuOpen((prev) => !prev);
   };
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
   };
 
-  const getRouterPath = (item: string) => (item === "home" ? "/" : `/${item}`);
+  const getSectionHref = (id: string) => `/#${id}`;
 
   useEffect(() => {
     if (!isMenuOpen) return;
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
     };
@@ -36,62 +54,80 @@ const Header: React.FC<HeaderProps> = ({ info }) => {
   }, [isMenuOpen]);
 
   return (
-    <section className={styles.light}>
-      {/* Desktop View */}
-      <ul className={styles.list}>
-        {info.map((item, index) => {
-          return (
+    <header className={styles.light} ref={headerRef}>
+      <nav aria-label={navigationLabel}>
+        {/* Desktop navigation */}
+        <ul className={styles.list}>
+          {info.map((item) => (
             <motion.li
               whileHover={{ scale: 1.3 }}
               transition={{ type: "spring", damping: 5, stiffness: 100 }}
-              key={index}
+              key={item.id}
             >
-              <Link to={getRouterPath(item)} className={styles.navLink}>
-                {item}
-              </Link>
+              <a href={getSectionHref(item.id)} className={styles.navLink}>
+                {item.label}
+              </a>
             </motion.li>
-          );
-        })}
-      </ul>
+          ))}
+        </ul>
 
-      {/* Mobile View */}
-      <div
-        onClick={handelMenuView}
-        className={styles.mobile}
-        role="button"
-        aria-label="Toggle menu"
-      >
-        <img src={hamburger} alt="hamburguer" width={24} height={24} />
-      </div>
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.ul
-            className={styles.menuMobile}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            ref={menuRef}
+        {/* Mobile navigation */}
+        <div className={styles.actions}>
+          <button
+            type="button"
+            className={styles.languageButton}
+            aria-label={themeButtonLabel}
+            onClick={onThemeChange}
           >
-            {info.map((item, index) => (
-              <Link
-                  to={getRouterPath(item)}
-                  onClick={handleCloseMenu}
-                  className={styles.navLink}
+            {theme === "light" ? "☾" : "☀"}
+          </button>
+          <button
+            type="button"
+            className={styles.languageButton}
+            aria-label={changeLanguageLabel}
+            onClick={() => onLocaleChange(locale === "en" ? "es" : "en")}
+          >
+            {locale === "en" ? "ES" : "EN"}
+          </button>
+          <button
+            type="button"
+            onClick={handleMenuView}
+            className={styles.mobile}
+            aria-label={toggleMenuLabel}
+            aria-expanded={isMenuOpen}
+          >
+            <img src={hamburger} alt="" width={24} height={24} />
+          </button>
+        </div>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.ul
+              className={styles.menuMobile}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {info.map((item) => (
+                <motion.li
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", damping: 5, stiffness: 100 }}
+                  key={item.id}
                 >
-              <motion.li
-                whileHover={{ scale: 1.3 }}
-                transition={{ type: "spring", damping: 5, stiffness: 100 }}
-                key={index}
-              >
-              </motion.li>
-                  {item}
-                </Link>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-    </section>
+                  <a
+                    href={getSectionHref(item.id)}
+                    onClick={handleCloseMenu}
+                    className={styles.navLink}
+                  >
+                    {item.label}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
   );
 };
 
