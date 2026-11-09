@@ -70,3 +70,25 @@ p {
   margin: 0;
   padding: 0;
 }
+@import "tailwindcss";
+
+@theme {
+  --animate-scroll: scroll 30s linear infinite;
+  --animate-appear: appear 500ms ease both;
+  --animate-menu-in: menu-in 180ms ease both;
+}
+
+@keyframes scroll {
+  from { transform: translateX(50%); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
