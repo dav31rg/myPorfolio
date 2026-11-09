@@ -1,6 +1,4 @@
 import Cover from "../../components/project-card/project-card";
-import styles from "./projects.module.css";
-import { motion } from "motion/react";
 
 interface Info {
   title: string;
@@ -16,19 +14,16 @@ interface Info {
 
 const Portfolio: React.FC<Info> = ({ info, title, theme }) => {
   return (
-    <motion.div
+    <div
       id="projects"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
-      className={styles.main}>
-      <h1 className={styles.title}>{title}</h1>
-      <div className={styles.container}>
+      className="flex w-full max-w-[1200px] flex-col items-center">
+      <h1 className="mt-12 text-5xl max-lg:mt-4 max-lg:text-3xl">{title}</h1>
+      <div className="mt-12 grid w-[90%] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
         {info.map((project, index) => (
           <Cover key={index} project={project} theme={theme} />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

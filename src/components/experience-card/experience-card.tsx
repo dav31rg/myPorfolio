@@ -1,4 +1,3 @@
-import styles from "./experience-card.module.css";
 
 interface CardProps {
   title: string;
@@ -11,20 +10,20 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ title, company, date, description, technologies }) => {
   return (
     <div
-      className={styles.container}
+      className="flex h-auto w-full flex-col gap-4 rounded-[25px] border border-[var(--border-color)] shadow-[0_8px_24px_rgba(17,17,26,0.1),0_16px_56px_rgba(17,17,26,0.1),0_24px_80px_rgba(17,17,26,0.1)]"
     >
-      <div className={styles.padContainer}>
-        <div className={styles.leftAlign}>
-          <div className={styles.flex}>
-            <h1 className={styles.titleGray}>{title}</h1>
-            <h2 className={styles.titleOrange}>{company}</h2>
+      <div className="mt-3 p-4">
+        <div className="mb-4 flex flex-col items-start">
+          <div className="flex gap-4">
+            <h1 className="m-0 text-xl text-[var(--text-color)]">{title}</h1>
+            <h2 className="m-0 text-xl text-orange-500">{company}</h2>
           </div>
-          <h3 className={styles.date}>{date}</h3>
+          <h3 className="m-0 text-base text-orange-500">{date}</h3>
         </div>
-        <p className={styles.text}>{description}</p>
-      <div className={styles.imageContainer}>
+        <p className="m-0 text-justify text-base">{description}</p>
+      <div className="mt-2 flex justify-center gap-2">
         {technologies.map((icon, index)=>( 
-          <img key={index} src={icon} className={styles.image} alt={`${title} image`} />
+          <img key={index} src={icon} className="h-6 w-6" alt={`${title} image`} />
 
         ))}
       </div>

@@ -1,8 +1,7 @@
-import styles from "./footer.module.css";
 
 const Footer: React.FC = () => {
   return (
-    <div className={styles.main}>
+    <div className="h-12 w-full">
     </div>
   );
 };

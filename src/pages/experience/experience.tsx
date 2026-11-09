@@ -1,6 +1,4 @@
 import Card from "../../components/experience-card/experience-card";
-import styles from "./experience.module.css";
-import { motion } from "motion/react";
 
 interface Info {
   labels: {
@@ -27,14 +25,11 @@ interface Info {
 
 const Experience: React.FC<Info> = ({ info, labels }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
+    <div
       id="experience"
-      className={styles.main}>
-      <div id={styles.education} className={styles.flexCol}>
-        <h1 className={styles.title}>{labels.education}</h1>
+      className="mx-auto mt-12 grid w-[90%] max-w-[1200px] grid-cols-2 gap-20 max-lg:mt-4 max-lg:grid-cols-1">
+      <div id="education" className="flex w-full flex-col items-center gap-16 max-lg:order-2 max-lg:gap-8">
+        <h1 className="m-0 text-5xl max-lg:text-3xl">{labels.education}</h1>
         {info.education.map((card, idx) => (
           <Card
             key={idx}
@@ -47,8 +42,8 @@ const Experience: React.FC<Info> = ({ info, labels }) => {
         ))}
       </div>
 
-      <div id={styles.experience} className={styles.flexCol}>
-        <h1 className={styles.title}>{labels.workExperience}</h1>
+      <div id="experience" className="flex w-full flex-col items-center gap-16 max-lg:order-1 max-lg:gap-8">
+        <h1 className="m-0 text-5xl max-lg:text-3xl">{labels.workExperience}</h1>
         {info.work.map((card, idx) => (
           <Card
             key={idx}
@@ -60,7 +55,7 @@ const Experience: React.FC<Info> = ({ info, labels }) => {
           />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

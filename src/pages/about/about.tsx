@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-import styles from "./about.module.css";
 
 interface Info {
   labels: {
@@ -16,54 +14,37 @@ interface Info {
 
 const About: React.FC<Info> = ({ info, labels }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: [0, 0.71, 0.2, 1.01] }}
+    <div
       id="about"
-      className={styles.main}
+      className="mx-auto flex h-[50rem] w-full max-w-[1200px] flex-col items-baseline gap-12 overflow-x-hidden p-0"
     >
-      <section className={styles.row}>
+      <section className="mt-28 grid w-full grid-cols-2 justify-between max-lg:mt-4 max-lg:grid-cols-1 max-lg:gap-4">
         <div>
-          <img className={styles.image} src={info.avatar} alt="" />
+          <img className="h-[400px] w-[400px] rounded-[20%] max-lg:h-auto max-lg:w-[280px]" src={info.avatar} alt="" />
         </div>
-        <div className={styles.container}>
-          <h1 className={styles.title}>{labels.about}</h1>
-          <p className={styles.text}>{info.description}</p>
-          <motion.div
-            className={styles.button}
-            whileHover={{ scale: 1.3 }}
-            transition={{ type: "spring", damping: 5, stiffness: 100 }}
-          >
+        <div className="flex flex-col items-center justify-between max-lg:gap-8">
+          <h1 className="m-0 text-5xl max-lg:text-3xl">{labels.about}</h1>
+          <p className="m-0 max-w-[700px] px-4 text-justify text-xl max-lg:text-base">{info.description}</p>
+          <div className="flex h-10 w-[200px] items-center justify-center rounded-[30px_30px_30px_0] bg-orange-500 transition-transform hover:scale-110 motion-reduce:transition-none">
             <a target="_blank" href={`https://${info.cv}`}>
               {labels.downloadCv}
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
-      <div className={styles.imageContainer}>
-        <motion.div
-          className={styles.carrusel}
-          animate={{ x: ["50%", "-100%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 30,
-            ease: "linear",
-          }}
-        >
+      <div className="flex gap-2">
+        <div className="flex animate-scroll flex-row gap-8 [flex-wrap:nowrap] motion-reduce:animate-none">
           {info.knowledge.map((icon, index) => (
-            <motion.img
-              whileHover={{ scale: 1.3 }}
+            <img
               key={index}
-              height={100}
-              width={100}
+              className="h-[100px] w-[100px] transition-transform hover:scale-110 motion-reduce:transition-none"
               src={icon}
               alt={`image of ${icon}`}
             />
           ))}
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

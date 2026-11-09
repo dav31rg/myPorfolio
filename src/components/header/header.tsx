@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import hamburger from "../../assets/hamburger.svg";
-import styles from "./header.module.css";
 import type { Locale } from "../../data/portfolio";
+import Logo from "../ui/logo";
 
 interface HeaderProps {
   info: Array<{ id: string; label: string }>;
@@ -54,28 +53,25 @@ const Header: React.FC<HeaderProps> = ({
   }, [isMenuOpen]);
 
   return (
-    <header className={styles.light} ref={headerRef}>
-      <nav aria-label={navigationLabel}>
+    <header className="sticky top-0 z-[1000] flex h-24 w-full items-center justify-end bg-[var(--background-color-light)]" ref={headerRef}>
+      <Logo />
+      <nav className="flex w-full items-center justify-end" aria-label={navigationLabel}>
         {/* Desktop navigation */}
-        <ul className={styles.list}>
+        <ul className="m-0 mr-4 flex list-none justify-end gap-8 p-0 text-2xl max-lg:hidden">
           {info.map((item) => (
-            <motion.li
-              whileHover={{ scale: 1.3 }}
-              transition={{ type: "spring", damping: 5, stiffness: 100 }}
-              key={item.id}
-            >
-              <a href={getSectionHref(item.id)} className={styles.navLink}>
+            <li key={item.id} className="cursor-pointer transition-transform hover:scale-110">
+              <a href={getSectionHref(item.id)} className="block text-[var(--background-color-dark)] no-underline">
                 {item.label}
               </a>
-            </motion.li>
+            </li>
           ))}
         </ul>
 
         {/* Mobile navigation */}
-        <div className={styles.actions}>
+        <div className="mr-4 flex items-center gap-4">
           <button
             type="button"
-            className={styles.languageButton}
+            className="cursor-pointer rounded border border-[var(--background-color-dark)] bg-transparent px-2 py-1 text-[var(--background-color-dark)]"
             aria-label={themeButtonLabel}
             onClick={onThemeChange}
           >
@@ -83,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({
           </button>
           <button
             type="button"
-            className={styles.languageButton}
+            className="cursor-pointer rounded border border-[var(--background-color-dark)] bg-transparent px-2 py-1 text-[var(--background-color-dark)]"
             aria-label={changeLanguageLabel}
             onClick={() => onLocaleChange(locale === "en" ? "es" : "en")}
           >
@@ -92,40 +88,28 @@ const Header: React.FC<HeaderProps> = ({
           <button
             type="button"
             onClick={handleMenuView}
-            className={styles.mobile}
+            className="hidden cursor-pointer border-0 bg-transparent p-0 max-lg:block"
             aria-label={toggleMenuLabel}
             aria-expanded={isMenuOpen}
           >
             <img src={hamburger} alt="" width={24} height={24} />
           </button>
         </div>
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.ul
-              className={styles.menuMobile}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              {info.map((item) => (
-                <motion.li
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", damping: 5, stiffness: 100 }}
-                  key={item.id}
+        {isMenuOpen && (
+          <ul className="absolute right-0 top-[4.6rem] hidden w-full list-none flex-col gap-4 bg-[var(--background-color-light)] p-4 max-lg:flex">
+            {info.map((item) => (
+              <li key={item.id} className="animate-[menu-in_180ms_ease_both] motion-reduce:animate-none">
+                <a
+                  href={getSectionHref(item.id)}
+                  onClick={handleCloseMenu}
+                  className="block cursor-pointer px-4 py-2 text-2xl text-[var(--background-color-dark)] no-underline"
                 >
-                  <a
-                    href={getSectionHref(item.id)}
-                    onClick={handleCloseMenu}
-                    className={styles.navLink}
-                  >
-                    {item.label}
-                  </a>
-                </motion.li>
-              ))}
-            </motion.ul>
-          )}
-        </AnimatePresence>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
     </header>
   );

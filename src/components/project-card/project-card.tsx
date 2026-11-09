@@ -1,6 +1,4 @@
-import styles from "./project-card.module.css";
 import github from "../../assets/github.svg";
-import { motion } from "motion/react";
 
 interface Info {
   theme: "light" | "dark";
@@ -19,40 +17,37 @@ const Cover: React.FC<Info> = ({ project, theme }) => {
 
   return (
     <div
-      className={styles.main}
+      className="flex h-auto w-full flex-col justify-between gap-8 rounded-[20px] pb-4"
       style={{
         backgroundColor:
           theme === "dark" ? "var(--surface-primary)" : project.backgroundColor,
       }}
     >
-      <h1 className={styles.mainTitle} style={{ color: textColor }}>
+      <h1 className="mt-4" style={{ color: textColor }}>
         {project.title}
       </h1>
       <div>
         <img
           src={project.image}
-          className={styles.image}
+          className="h-auto w-full"
           alt={`${project.title} image`}
         />
-        <p className={styles.description} style={{ color: textColor }}>
+        <p className="p-4 text-justify" style={{ color: textColor }}>
           {project.description}
         </p>
-        <ul className={styles.list}>
+        <ul className="flex list-none justify-center gap-2">
           {project.technologies.map((item, index) => (
             <li key={index}>
-              <img src={item} className={styles.icon} alt={`${item} icon`} />
+              <img src={item} className="h-6 w-6" alt={`${item} icon`} />
             </li>
           ))}
         </ul>
       </div>
-      <motion.div
-        whileHover={{ scale: 1.2 }}
-        transition={{ type: "spring", damping: 5, stiffness: 100 }}
-      >
-        <a href={project.link} target="_blank">
-          <img src={github} className={styles.link} alt="github link icon" />
+      <div>
+        <a className="cursor-pointer" href={project.link} target="_blank">
+          <img className="w-11 transition-transform hover:scale-110 motion-reduce:transition-none" src={github} alt="github link icon" />
         </a>
-      </motion.div>
+      </div>
     </div>
   );
 };
