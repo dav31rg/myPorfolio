@@ -1,53 +1,63 @@
-import Button from "../../components/ui/button";
+import Badge from "../../components/ui/badge";
 
-interface Info {
-  labels: {
-    about: string;
-    downloadCv: string;
-  };
-  info: {
-    avatar: string;
-    cv: string;
+interface AboutProps {
+  title: string;
+  subtitle: string;
+  description: Array<{
+    icon: string;
+    title: string;
     description: string;
-    knowledge: string[];
-  };
+  }>;
+  knowledge: string[];
 }
 
-const About: React.FC<Info> = ({ info, labels }) => {
+const About: React.FC<AboutProps> = ({
+  title,
+  subtitle,
+  description,
+  knowledge,
+}) => {
   return (
-    <div
-      id="about"
-      className="layout flex h-[50rem] flex-col items-baseline gap-12 overflow-x-hidden"
-    >
-      <section className="mt-28 grid w-full grid-cols-2 justify-between max-lg:mt-4 max-lg:grid-cols-1 max-lg:gap-4">
-        <div>
-          <img className="h-[400px] w-[400px] rounded-[20%] max-lg:h-auto max-lg:w-[280px]" src={info.avatar} alt="" />
-        </div>
-        <div className="flex flex-col items-center justify-between max-lg:gap-8">
-          <h1 className="m-0 text-5xl max-lg:text-3xl">{labels.about}</h1>
-          <p className="m-0 max-w-[700px] px-4 text-justify text-xl max-lg:text-base">{info.description}</p>
-          <Button
-            href={`https://${info.cv}`}
-            target="_blank"
-            rel="noreferrer"
-            className="w-[200px] rounded-[30px_30px_30px_0] hover:scale-105"
-          >
-            {labels.downloadCv}
-          </Button>
+    <div className="bg-secondary/5">
+      <section id="about" className="layout flex w-full py-32 max-lg:py-8">
+        <Badge>01 / ABOUT</Badge>
+        <div className="flex flex-col">
+          <h2 className="mt-6 text-4xl font-semibold max-lg:text-3xl">
+            {title}
+          </h2>
+          <p className="mt-4 max-w-3xl text-base text-tertiary">{subtitle}</p>
+          <div className="mt-8 grid w-full gap-4 md:grid-cols-3">
+            {description.map((item) => (
+              <article
+                key={item.title}
+                className="flex flex-col gap-3 rounded-xl border border-secondary/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+              >
+                <span className="text-primary" aria-hidden="true">
+                  <img className="size-6" src={item.icon} alt="" />
+                </span>
+                <h3 className="text-lg font-semibold text-[var(--text-color)]">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-tertiary dark:text-white/70">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            {knowledge.map((icon, index) => (
+              <img
+                key={`${icon}-${index}`}
+                className="size-10 object-contain"
+                src={icon}
+                alt=""
+                aria-hidden="true"
+              />
+            ))}
+          </div>
         </div>
       </section>
-      <div className="flex gap-2">
-        <div className="flex animate-scroll flex-row gap-8 [flex-wrap:nowrap] motion-reduce:animate-none">
-          {info.knowledge.map((icon, index) => (
-            <img
-              key={index}
-              className="h-[100px] w-[100px] transition-transform hover:scale-110 motion-reduce:transition-none"
-              src={icon}
-              alt={`image of ${icon}`}
-            />
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
