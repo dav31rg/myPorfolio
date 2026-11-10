@@ -45,9 +45,8 @@ function App() {
             <main>
               <Hero
                 info={content.personal}
-                greeting={content.labels.greeting}
               />
-              <About info={content.about} labels={content.labels} />
+              <About {...content.about} />
               <Experience info={content.experience} labels={content.labels} />
               <Portfolio
                 info={content.projects}

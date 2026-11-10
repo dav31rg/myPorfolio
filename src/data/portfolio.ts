@@ -10,20 +10,15 @@ import gitLab from "../assets/git-lab.svg";
 import git from "../assets/git.svg";
 import github from "../assets/github.svg";
 import html from "../assets/html.svg";
-import instagram from "../assets/instagram.svg";
 import js from "../assets/js.svg";
-import linkedin from "../assets/linkedin.svg";
 import linux from "../assets/linux.svg";
 import location from "../assets/location.svg";
 import mail from "../assets/mail.svg";
-import meebo from "../assets/meboo.jpeg";
-import avatar from "../assets/meboo.webp";
 import mongoDB from "../assets/mongo-db.svg";
 import mySql from "../assets/my-sql.svg";
 import nestJs from "../assets/nest-js.svg";
 import nextJs from "../assets/next-js.svg";
 import nodeJs from "../assets/node-js.svg";
-import phone from "../assets/phone.svg";
 import postgreSql from "../assets/postgre-sql.svg";
 import prisma from "../assets/prisma.svg";
 import projectEatable from "../assets/project-eatable.gif";
@@ -57,43 +52,64 @@ const englishInfo = {
   ],
 
   personal: {
-    meebo: meebo,
     name: "Davel Reymundo Gobea",
-    role: "Full-Stack Developer",
+    greeting:
+      "Focused on building scalable software solutions and modern web applications. Combining an Electronic Engineering background with full-stack development experience to create efficient, reliable, and user-centered solutions.",
+    role: [
+      "Full-Stack Developer",
+      "Electronics Engineer",
+      "Technical Support Specialist",
+    ],
+    actions: [
+      { id: "projects", label: "View Projects" },
+      { id: "contact", label: "Get in Touch" },
+    ],
     contact: [
-      {
-        icon: phone,
-        value: "+51 959 005 474",
-      },
       {
         icon: mail,
         value: "davel.reymundo@gmail.com",
       },
       {
         icon: location,
-        value: "Arequipa, Perú",
+        value: "Perú",
       },
     ],
     socialMedia: [
       {
-        icon: github,
+        icon: "github",
         value: "github.com/dav31rg",
       },
       {
-        icon: instagram,
-        value: "instagram.com/davel_r_gobea",
-      },
-      {
-        icon: linkedin,
+        icon: "linkedin",
         value: "linkedin.com/in/davelrgobea",
       },
     ],
   },
   about: {
-    avatar: avatar,
     cv: "drive.google.com/file/d/1OTG2c8NLF2LrM1GnyZG6Dmn4NQM7-9AB/view?usp=sharing",
-    description:
-      "Hello! I am a passionate Full Stack Developer and Electronics Engineer with a strong interest in technology. I have experience in web application development, technical support, and network management. I enjoy working in teams, collaborating on innovative projects, and continuously learning to stay up-to-date in the tech world. I thrive on tackling technical challenges and creating solutions that have a positive impact. I am committed to professional growth, collaborating with diverse teams, and sharing my passion for technology..",
+    title: "Engineering Foundations. Building Modern Software Solutions.",
+    subtitle:
+      "Built on engineering principles and analytical thinking. Evolved from electronics and microcontrollers to modern web development and scalable software solutions.",
+    description: [
+      {
+        icon: typescript,
+        title: "TypeScript",
+        description:
+          "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+      },
+      {
+        icon: react,
+        title: "React",
+        description:
+          "React is a JavaScript library for building user interfaces. It makes it painless to create interactive UIs.",
+      },
+      {
+        icon: nextJs,
+        title: "Next.js",
+        description:
+          "Next.js is a React framework that enables functionality such as server-side rendering and generating static websites for React-based web applications.",
+      },
+    ],
     knowledge: [
       // Programming Languages / BI Tools:
       typescript,
@@ -262,12 +278,44 @@ const spanishInfo = {
   ],
   personal: {
     ...englishInfo.personal,
-    role: "Desarrollador Full Stack",
+    greeting:
+      "Orientado al desarrollo de soluciones de software escalables y aplicaciones web modernas. Combino mi formación en Ingeniería Electrónica con experiencia en desarrollo full-stack para crear soluciones eficientes, confiables y centradas en las necesidades del usuario.",
+    role: [
+      "Desarrollador Full Stack",
+      "Ingeniero Electrónico",
+      "Especialista en Soporte Técnico",
+    ],
+    actions: [
+      { id: "projects", label: "Ver Proyectos" },
+      { id: "contact", label: "Contáctame" },
+    ],
   },
   about: {
     ...englishInfo.about,
-    description:
-      "¡Hola! Soy desarrollador Full Stack e ingeniero electrónico, apasionado por la tecnología. Tengo experiencia desarrollando aplicaciones web, brindando soporte técnico y administrando redes. Disfruto trabajar en equipo, colaborar en proyectos innovadores y aprender continuamente. Me motiva resolver desafíos técnicos y crear soluciones de impacto positivo.",
+    title:
+      "Fundamentos de ingeniería. Creando soluciones de software modernas.",
+    subtitle:
+      "De la ingeniería al desarrollo web, aplicando pensamiento analítico para crear soluciones de software escalables y modernas.",
+    description: [
+      {
+        icon: typescript,
+        title: "TypeScript",
+        description:
+          "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+      },
+      {
+        icon: react,
+        title: "React",
+        description:
+          "React is a JavaScript library for building user interfaces. It makes it painless to create interactive UIs.",
+      },
+      {
+        icon: nextJs,
+        title: "Next.js",
+        description:
+          "Next.js is a React framework that enables functionality such as server-side rendering and generating static websites for React-based web applications.",
+      },
+    ],
   },
   experience: {
     work: [

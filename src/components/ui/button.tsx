@@ -11,8 +11,8 @@ type ButtonSize = "sm" | "md" | "icon";
 interface SharedProps {
   children?: ReactNode;
   className?: string;
-  iconLeft?: ReactNode;
-  iconRight?: ReactNode;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
 }
@@ -25,21 +25,23 @@ export type ButtonProps = SharedProps &
 
 const variants: Record<ButtonVariant, string> = {
   primary: `
-    bg-primary text-white
-    hover:bg-primary/90
+    bg-secondary text-white
+    hover:bg-primary
     focus-visible:ring-primary
+    dark:bg-white dark:text-secondary
+    dark:hover:bg-primary dark:hover:text-white dark:focus-visible:ring-white
   `.trim(),
   secondary: `
-    bg-secondary text-white
-    hover:bg-secondary/90
-    focus-visible:ring-secondary
-    dark:bg-white dark:text-secondary
-    dark:hover:bg-gray-200 dark:focus-visible:ring-white
+    bg-tertiary/10 text-secondary
+    hover:bg-tertiary/30
+    focus-visible:ring-tertiary
+    dark:text-white
+    dark:hover:bg-tertiary/40 dark:focus-visible:ring-white
   `.trim(),
   outline: `
-    border border-tertiary/20 bg-transparent text-secondary
-    hover:bg-secondary/5 focus-visible:ring-primary
-    dark:border-white/25 dark:text-white
+    border border-tertiary/10 bg-tertiary/3 text-tertiary
+    hover:bg-tertiary/5 focus-visible:ring-primary
+    dark:border-white/25 dark:text-tertiary
     dark:hover:bg-white/10 dark:focus-visible:ring-blue-400
   `.trim(),
   ghost: `
@@ -51,8 +53,8 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "min-h-9 px-3 text-sm",
-  md: "min-h-11 px-5 text-base",
+  sm: "min-h-9 w-full px-3 text-sm lg:w-auto",
+  md: "min-h-11 w-full px-5 text-base lg:w-auto",
   icon: "size-10 p-2",
 };
 
@@ -60,8 +62,8 @@ const Button: React.FC<ButtonProps> = (props) => {
   const {
     children,
     className,
-    iconLeft,
-    iconRight,
+    leftIcon,
+    rightIcon,
     variant = "primary",
     size = "md",
     ...elementProps
@@ -80,15 +82,15 @@ const Button: React.FC<ButtonProps> = (props) => {
         {...(elementProps as AnchorHTMLAttributes<HTMLAnchorElement>)}
         className={classes}
       >
-        {iconLeft && (
+        {leftIcon && (
           <span className="inline-flex shrink-0" aria-hidden="true">
-            {iconLeft}
+            {leftIcon}
           </span>
         )}
         {children}
-        {iconRight && (
+        {rightIcon && (
           <span className="inline-flex shrink-0" aria-hidden="true">
-            {iconRight}
+            {rightIcon}
           </span>
         )}
       </a>
@@ -101,15 +103,15 @@ const Button: React.FC<ButtonProps> = (props) => {
       {...(elementProps as ButtonHTMLAttributes<HTMLButtonElement>)}
       className={classes}
     >
-      {iconLeft && (
+      {leftIcon && (
         <span className="inline-flex shrink-0" aria-hidden="true">
-          {iconLeft}
+          {leftIcon}
         </span>
       )}
       {children}
-      {iconRight && (
+      {rightIcon && (
         <span className="inline-flex shrink-0" aria-hidden="true">
-          {iconRight}
+          {rightIcon}
         </span>
       )}
     </button>
