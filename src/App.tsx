@@ -1,13 +1,13 @@
-import About from "./pages/about/about";
-import Experience from "./pages/experience/experience";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
+import { portfolioContent, type Locale } from "./data/portfolio";
+import About from "./pages/about/about";
+import Experience from "./pages/experience/experience";
 import Hero from "./pages/home/home";
 import NotFound from "./pages/not-found/not-found";
 import Portfolio from "./pages/projects/projects";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { portfolioContent, type Locale } from "./data/portfolio";
 
 function App() {
   const [locale, setLocale] = useState<Locale>("en");
@@ -21,13 +21,20 @@ function App() {
   return (
     <BrowserRouter>
       <Header
+        logo={content.logo}
         info={content.header}
         locale={locale}
         onLocaleChange={setLocale}
         changeLanguageLabel={content.labels.changeLanguage}
         theme={theme}
-        onThemeChange={() => setTheme((current) => current === "light" ? "dark" : "light")}
-        themeButtonLabel={theme === "light" ? content.labels.darkTheme : content.labels.lightTheme}
+        onThemeChange={() =>
+          setTheme((current) => (current === "light" ? "dark" : "light"))
+        }
+        themeButtonLabel={
+          theme === "light"
+            ? content.labels.darkTheme
+            : content.labels.lightTheme
+        }
         navigationLabel={content.labels.navigation}
         toggleMenuLabel={content.labels.toggleMenu}
       />
@@ -36,7 +43,10 @@ function App() {
           path="/"
           element={
             <main>
-              <Hero info={content.personal} greeting={content.labels.greeting} />
+              <Hero
+                info={content.personal}
+                greeting={content.labels.greeting}
+              />
               <About info={content.about} labels={content.labels} />
               <Experience info={content.experience} labels={content.labels} />
               <Portfolio
@@ -47,10 +57,7 @@ function App() {
             </main>
           }
         />
-        <Route
-          path="*"
-          element={<NotFound labels={content.labels} />}
-        />
+        <Route path="*" element={<NotFound labels={content.labels} />} />
       </Routes>
       <Footer />
     </BrowserRouter>

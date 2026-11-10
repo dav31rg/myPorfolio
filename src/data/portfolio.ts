@@ -1,51 +1,61 @@
-import js from "../assets/js.svg";
-import nodeJs from "../assets/node-js.svg";
-import typescript from "../assets/type-script.svg";
-import nestJs from "../assets/nest-js.svg";
-import react from "../assets/react.svg";
 import angular from "../assets/angular.svg";
-import nextJs from "../assets/next-js.svg";
-import ruby from "../assets/ruby.svg";
-import rails from "../assets/rails.svg";
-import html from "../assets/html.svg";
-import css from "../assets/css.svg";
+import api from "../assets/api.webp";
 import arduino from "../assets/arduino.svg";
+import aws from "../assets/aws.svg";
 import cpp from "../assets/cpp.svg";
+import css from "../assets/css.svg";
 import docker from "../assets/docker.svg";
 import figma from "../assets/figma.svg";
 import gitLab from "../assets/git-lab.svg";
-import linux from "../assets/linux.svg";
-import postgreSql from "../assets/postgre-sql.svg";
-import prisma from "../assets/prisma.svg";
-import python from "../assets/python.svg";
 import git from "../assets/git.svg";
 import github from "../assets/github.svg";
+import html from "../assets/html.svg";
+import instagram from "../assets/instagram.svg";
+import js from "../assets/js.svg";
+import linkedin from "../assets/linkedin.svg";
+import linux from "../assets/linux.svg";
+import location from "../assets/location.svg";
+import mail from "../assets/mail.svg";
 import meebo from "../assets/meboo.jpeg";
 import avatar from "../assets/meboo.webp";
-import mail from "../assets/mail.svg";
-import phone from "../assets/phone.svg";
-import location from "../assets/location.svg";
-import linkedin from "../assets/linkedin.svg";
-import instagram from "../assets/instagram.svg";
-import redux from "../assets/redux.svg";
-import sqLite from "../assets/sq-lite.svg";
-import mySql from "../assets/my-sql.svg";
 import mongoDB from "../assets/mongo-db.svg";
-import aws from "../assets/aws.svg";
-import windows from "../assets/windows.svg";
+import mySql from "../assets/my-sql.svg";
+import nestJs from "../assets/nest-js.svg";
+import nextJs from "../assets/next-js.svg";
+import nodeJs from "../assets/node-js.svg";
+import phone from "../assets/phone.svg";
+import postgreSql from "../assets/postgre-sql.svg";
+import prisma from "../assets/prisma.svg";
 import projectEatable from "../assets/project-eatable.gif";
-import api from "../assets/api.webp";
+import python from "../assets/python.svg";
+import rails from "../assets/rails.svg";
+import react from "../assets/react.svg";
+import redux from "../assets/redux.svg";
+import ruby from "../assets/ruby.svg";
+import sqLite from "../assets/sq-lite.svg";
+import typescript from "../assets/type-script.svg";
+import windows from "../assets/windows.svg";
 
 // Icons from:
 // https://github.com/tandpfun/skill-icons?tab=readme-ov-file#icons-list
 
 const englishInfo = {
+  logo: {
+    initials: "DR",
+    name: "Davel Reymundo",
+    role: "Full-Stack Developer",
+  },
+
   header: [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "experience", label: "Experience" },
+    { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
+    { id: "experience", label: "Experience" },
+    { id: "education", label: "Education" },
+    { id: "contact", label: "Contact" },
   ],
+
   personal: {
     meebo: meebo,
     name: "Davel Reymundo Gobea",
@@ -216,7 +226,7 @@ const englishInfo = {
         "This API is designed to simulate the check-in process for airlines",
       image: api,
       link: "https://github.com/dav31rg/simulacionCheckInAerolinea-API",
-      technologies: [ruby, rails ],
+      technologies: [ruby, rails],
       backgroundColor: "#DDDAD0",
       textColor: "#232323",
     },
@@ -235,11 +245,20 @@ const englishInfo = {
 
 const spanishInfo = {
   ...englishInfo,
+  logo: {
+    initials: "DR",
+    name: "Davel Reymundo",
+    role: "Desarr. Full Stack",
+  },
+
   header: [
     { id: "home", label: "Inicio" },
     { id: "about", label: "Sobre mí" },
-    { id: "experience", label: "Experiencia" },
+    { id: "skills", label: "Habilidades" },
     { id: "projects", label: "Proyectos" },
+    { id: "experience", label: "Experiencia" },
+    { id: "education", label: "Educación" },
+    { id: "contact", label: "Contacto" },
   ],
   personal: {
     ...englishInfo.personal,

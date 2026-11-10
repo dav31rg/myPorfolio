@@ -1,4 +1,5 @@
 import github from "../../assets/github.svg";
+import Button from "../ui/button";
 
 interface Info {
   theme: "light" | "dark";
@@ -44,9 +45,16 @@ const Cover: React.FC<Info> = ({ project, theme }) => {
         </ul>
       </div>
       <div>
-        <a className="cursor-pointer" href={project.link} target="_blank">
-          <img className="w-11 transition-transform hover:scale-110 motion-reduce:transition-none" src={github} alt="github link icon" />
-        </a>
+        <Button
+          href={project.link}
+          target="_blank"
+          rel="noreferrer"
+          variant="ghost"
+          size="icon"
+          aria-label={`${project.title} GitHub repository`}
+        >
+          <img className="w-11" src={github} alt="" />
+        </Button>
       </div>
     </div>
   );

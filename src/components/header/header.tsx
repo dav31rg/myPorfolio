@@ -1,9 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import hamburger from "../../assets/hamburger.svg";
 import type { Locale } from "../../data/portfolio";
+import Button from "../ui/button";
+import { Globe, Hamburger, Moon, Sun } from "../ui/icons";
 import Logo from "../ui/logo";
 
 interface HeaderProps {
+  logo: {
+    initials: string;
+    name: string;
+    role: string;
+  };
   info: Array<{ id: string; label: string }>;
   locale: Locale;
   onLocaleChange: (locale: Locale) => void;
@@ -16,6 +22,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({
+  logo,
   info,
   locale,
   onLocaleChange,
@@ -42,7 +49,10 @@ const Header: React.FC<HeaderProps> = ({
     if (!isMenuOpen) return;
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -53,64 +63,93 @@ const Header: React.FC<HeaderProps> = ({
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-[1000] flex h-24 w-full items-center justify-end bg-[var(--background-color-light)]" ref={headerRef}>
-      <Logo />
-      <nav className="flex w-full items-center justify-end" aria-label={navigationLabel}>
-        {/* Desktop navigation */}
-        <ul className="m-0 mr-4 flex list-none justify-end gap-8 p-0 text-2xl max-lg:hidden">
-          {info.map((item) => (
-            <li key={item.id} className="cursor-pointer transition-transform hover:scale-110">
-              <a href={getSectionHref(item.id)} className="block text-[var(--background-color-dark)] no-underline">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile navigation */}
-        <div className="mr-4 flex items-center gap-4">
-          <button
-            type="button"
-            className="cursor-pointer rounded border border-[var(--background-color-dark)] bg-transparent px-2 py-1 text-[var(--background-color-dark)]"
-            aria-label={themeButtonLabel}
-            onClick={onThemeChange}
-          >
-            {theme === "light" ? "☾" : "☀"}
-          </button>
-          <button
-            type="button"
-            className="cursor-pointer rounded border border-[var(--background-color-dark)] bg-transparent px-2 py-1 text-[var(--background-color-dark)]"
-            aria-label={changeLanguageLabel}
-            onClick={() => onLocaleChange(locale === "en" ? "es" : "en")}
-          >
-            {locale === "en" ? "ES" : "EN"}
-          </button>
-          <button
-            type="button"
-            onClick={handleMenuView}
-            className="hidden cursor-pointer border-0 bg-transparent p-0 max-lg:block"
-            aria-label={toggleMenuLabel}
-            aria-expanded={isMenuOpen}
-          >
-            <img src={hamburger} alt="" width={24} height={24} />
-          </button>
-        </div>
-        {isMenuOpen && (
-          <ul className="absolute right-0 top-[4.6rem] hidden w-full list-none flex-col gap-4 bg-[var(--background-color-light)] p-4 max-lg:flex">
+    <header
+      className="sticky top-0 z-50 w-full border-b border-secondary/10 bg-(--header-background) shadow-sm dark:border-white/10"
+      ref={headerRef}
+    >
+      <div className="mx-auto flex h-24 w-full max-w-[1200px] items-center justify-between px-[clamp(1rem,4vw,3rem)]">
+        <Logo initials={logo.initials} name={logo.name} role={logo.role} />
+        <nav
+          className="flex flex-1 items-center justify-center"
+          aria-label={navigationLabel}
+        >
+          {/* Desktop navigation */}
+          <ul className="m-0 flex list-none p-0 max-lg:hidden">
             {info.map((item) => (
-              <li key={item.id} className="animate-[menu-in_180ms_ease_both] motion-reduce:animate-none">
-                <a
+              <li
+                key={item.id}
+                className="cursor-pointer transition-transform hover:scale-110 "
+              >
+                <Button
                   href={getSectionHref(item.id)}
-                  onClick={handleCloseMenu}
-                  className="block cursor-pointer px-4 py-2 text-2xl text-[var(--background-color-dark)] no-underline"
+                  variant="ghost"
+                  size="sm"
+                  className="font-sans font-semibold"
                 >
                   {item.label}
-                </a>
+                </Button>
               </li>
             ))}
           </ul>
-        )}
-      </nav>
+
+          {/* Mobile navigation */}
+          {isMenuOpen && (
+            <ul className="absolute right-0 top-[4.6rem] hidden w-full list-none flex-col gap-4 bg-(--header-background) p-4 max-lg:flex">
+              {info.map((item) => (
+                <li
+                  key={item.id}
+                  className="animate-[menu-in_180ms_ease_both] motion-reduce:animate-none"
+                >
+                  <Button
+                    href={getSectionHref(item.id)}
+                    onClick={handleCloseMenu}
+                    variant="ghost"
+                    size="md"
+                    className="w-full justify-start"
+                  >
+                    {item.label}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </nav>
+        <div className="flex items-center gap-1">
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={themeButtonLabel}
+            onClick={onThemeChange}
+          >
+            {theme === "light" ? (
+              <Moon className="size-6" />
+            ) : (
+              <Sun className="size-6" />
+            )}
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            aria-label={changeLanguageLabel}
+            onClick={() => onLocaleChange(locale === "en" ? "es" : "en")}
+          >
+            <Globe className="size-6" />
+          </Button>
+          <Button
+            type="button"
+            onClick={handleMenuView}
+            variant="outline"
+            size="icon"
+            className="lg:hidden"
+            aria-label={toggleMenuLabel}
+            aria-expanded={isMenuOpen}
+          >
+            <Hamburger className="size-6" />
+          </Button>
+        </div>
+      </div>
     </header>
   );
 };
