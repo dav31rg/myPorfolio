@@ -16,9 +16,9 @@ const Card: React.FC<CardProps> = ({ title, company, date, description, technolo
         <div className="mb-4 flex flex-col items-start">
           <div className="flex gap-4">
             <h1 className="m-0 text-xl text-[var(--text-color)]">{title}</h1>
-            <h2 className="m-0 text-xl text-orange-500">{company}</h2>
+            <h2 className="m-0 text-xl text-primary">{company}</h2>
           </div>
-          <h3 className="m-0 text-base text-orange-500">{date}</h3>
+          <h3 className="m-0 text-base text-primary">{date}</h3>
         </div>
         <p className="m-0 text-justify text-base">{description}</p>
       <div className="mt-2 flex justify-center gap-2">

@@ -16,9 +16,9 @@ const Portfolio: React.FC<Info> = ({ info, title, theme }) => {
   return (
     <div
       id="projects"
-      className="flex w-full max-w-[1200px] flex-col items-center">
+      className="layout flex flex-col items-center">
       <h1 className="mt-12 text-5xl max-lg:mt-4 max-lg:text-3xl">{title}</h1>
-      <div className="mt-12 grid w-[90%] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+      <div className="mt-12 grid w-full grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
         {info.map((project, index) => (
           <Cover key={index} project={project} theme={theme} />
         ))}

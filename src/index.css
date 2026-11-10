@@ -1,4 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --color-primary: #2563eb;
+  --color-secondary: #171717;
+  --color-tertiary: #5F5E5E;
+  --animate-scroll: scroll 30s linear infinite;
+  --animate-appear: appear 500ms ease both;
+
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@utility layout {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
 :root {
+  color-scheme: light;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -6,34 +30,28 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #3c3d37;
-  background-color: #f8fafc;
 
-  --background-color-dark: #111111;
-  --background-color-light: #f8fafc;
-  --text-color: #3c3d37;
+  --on-background: var(--color-secondary);
+  --header-background: #f8fafc;
+  --text-color: var(--color-secondary);
   --page-background: #f8fafc;
   --surface-primary: #ebebeb;
   --surface-secondary: #d8d7d7;
-  --border-color: #f8fafc;
+  --border-color: #e5e7eb;
+  --hover-surface: rgb(23 23 23 / 5%);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  color: #ffffff;
-  background-color: #111111;
-
-  --background-color-dark: #ffffff;
-  --background-color-light: #111111;
+  --on-background: #ffffff;
+  --header-background: #111111;
   --text-color: #ffffff;
   --page-background: #111111;
   --surface-primary: #242424;
   --surface-secondary: #333333;
   --border-color: #333333;
-}
-
-* {
-  box-sizing: border-box;
+  --color-tertiary: #a3a3a3;
+  --hover-surface: rgb(255 255 255 / 10%);
 }
 
 html,
@@ -41,7 +59,6 @@ body,
 #root {
   min-width: 320px;
   min-height: 100vh;
-  margin: 0;
 }
 
 html {
@@ -54,28 +71,11 @@ html {
 
 #root {
   width: 100%;
-  max-width: 1280px;
-  margin-inline: auto;
 }
 
 body {
   color: var(--text-color);
   background-color: var(--page-background);
-}
-
-h1,
-h2,
-ul,
-p {
-  margin: 0;
-  padding: 0;
-}
-@import "tailwindcss";
-
-@theme {
-  --animate-scroll: scroll 30s linear infinite;
-  --animate-appear: appear 500ms ease both;
-  --animate-menu-in: menu-in 180ms ease both;
 }
 
 @keyframes scroll {

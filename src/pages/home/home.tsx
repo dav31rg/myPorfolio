@@ -14,10 +14,10 @@ const Hero: React.FC<Info> = ({ info, greeting }) => {
   return (
     <div
       id="home"
-      className="mx-auto mt-40 grid w-full max-w-[1200px] grid-cols-2 gap-8 max-lg:mt-8 max-lg:grid-cols-1"
+      className="layout mt-40 grid grid-cols-2 gap-8 max-lg:mt-8 max-lg:grid-cols-1"
     >
       <section className="flex w-full flex-col items-center justify-between gap-4 max-lg:order-2">
-        <span className="h-10 w-36 rounded-[30px_30px_30px_0] bg-orange-500 pt-2 text-center text-xl font-semibold text-white transition-transform hover:scale-110 motion-reduce:transition-none">
+        <span className="h-10 w-36 rounded-[30px_30px_30px_0] bg-primary pt-2 text-center text-xl font-semibold text-white transition-transform hover:scale-110 motion-reduce:transition-none">
           {greeting}
         </span>
         <div>
@@ -46,7 +46,7 @@ const Hero: React.FC<Info> = ({ info, greeting }) => {
           ))}
         </ul>
       </section>
-      <section className="flex items-center justify-center max-lg:order-1">
+      {/* <section className="flex items-center justify-center max-lg:order-1">
         <div className="flex h-[420px] w-[420px] animate-appear items-center justify-center rounded-full bg-[var(--surface-primary)] max-lg:h-[350px] max-lg:w-[350px] motion-reduce:animate-none">
           <div className="flex h-[380px] w-[380px] animate-appear items-center justify-center rounded-full bg-[var(--surface-secondary)] [animation-delay:100ms] max-lg:h-[320px] max-lg:w-[320px] motion-reduce:animate-none">
             <img
@@ -57,7 +57,7 @@ const Hero: React.FC<Info> = ({ info, greeting }) => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

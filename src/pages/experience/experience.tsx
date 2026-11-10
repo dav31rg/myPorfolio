@@ -27,7 +27,7 @@ const Experience: React.FC<Info> = ({ info, labels }) => {
   return (
     <div
       id="experience"
-      className="mx-auto mt-12 grid w-[90%] max-w-[1200px] grid-cols-2 gap-20 max-lg:mt-4 max-lg:grid-cols-1">
+      className="layout mt-12 grid grid-cols-2 gap-20 max-lg:mt-4 max-lg:grid-cols-1">
       <div id="education" className="flex w-full flex-col items-center gap-16 max-lg:order-2 max-lg:gap-8">
         <h1 className="m-0 text-5xl max-lg:text-3xl">{labels.education}</h1>
         {info.education.map((card, idx) => (
