@@ -1,5 +1,4 @@
 import angular from "../assets/angular.svg";
-import api from "../assets/api.webp";
 import arduino from "../assets/arduino.svg";
 import aws from "../assets/aws.svg";
 import cpp from "../assets/cpp.svg";
@@ -13,7 +12,6 @@ import mongoDB from "../assets/mongo-db.svg";
 import nestJs from "../assets/nest-js.svg";
 import nextJs from "../assets/next-js.svg";
 import postgreSql from "../assets/postgre-sql.svg";
-import projectEatable from "../assets/project-eatable.gif";
 import rails from "../assets/rails.svg";
 import react from "../assets/react.svg";
 import ruby from "../assets/ruby.svg";
@@ -74,6 +72,7 @@ const englishInfo = {
       },
     ],
   },
+
   about: {
     label: "About me",
     title: "Engineering Foundations. Building Modern Software Solutions.",
@@ -109,6 +108,7 @@ const englishInfo = {
         "Building web applications, backend services, and software solutions",
     },
   },
+
   skills: {
     label: "Skills",
     title: "Technical skills across modern software development.",
@@ -155,6 +155,7 @@ const englishInfo = {
       },
     ],
   },
+
   experience: {
     work: [
       {
@@ -233,38 +234,39 @@ const englishInfo = {
       },
     ],
   },
-  projects: [
-    {
-      title: "Uni Enrollment Simulation API",
-      description:
-        "This is an API designed for the registration and maintenance of student enrollments at a university, developed using NestJS.",
-      image: api,
-      link: "https://github.com/dav31rg/uniMatricula-API",
-      technologies: [typescript, nestJs],
-      backgroundColor: "#57564F",
-      textColor: "#f8fafc",
-    },
-    {
-      title: "Check-In Simulation API",
-      description:
-        "This API is designed to simulate the check-in process for airlines",
-      image: api,
-      link: "https://github.com/dav31rg/simulacionCheckInAerolinea-API",
-      technologies: [ruby, rails],
-      backgroundColor: "#DDDAD0",
-      textColor: "#232323",
-    },
-    {
-      title: "Eatable",
-      description:
-        "App to empower home cooks. You can see, create, and update recipes and cooking tips. Developed on React JS managing an API.",
-      image: projectEatable,
-      link: "https://github.com/dav31rg/eatable",
-      technologies: [js, react],
-      backgroundColor: "#232323",
-      textColor: "#f8fafc",
-    },
-  ],
+
+  projects: {
+    label: "Featured Projects",
+    title: "Selected personal projects and software solutions.",
+    subtitle:
+      "A collection of projects I build in my spare time to explore new technologies, strengthen my skills, and turn ideas into practical software solutions.",
+    projectsDetail: [
+      {
+        title: "Uni Enrollment Simulation API",
+        description:
+          "This is an API designed for the registration and maintenance of student enrollments at a university, developed using NestJS.",
+        github: "https://github.com/dav31rg/uniMatricula-API",
+        demo: "https://github.com/dav31rg/uniMatricula-API",
+        technologies: ["typescript", "nestJs"],
+      },
+      {
+        title: "Check-In Simulation API",
+        description:
+          "This API is designed to simulate the check-in process for airlines",
+        github: "https://github.com/dav31rg/simulacionCheckInAerolinea-API",
+        demo: "",
+        technologies: ["ruby", "ruby on rails"],
+      },
+      {
+        title: "Eatable",
+        description:
+          "App to empower home cooks. You can see, create, and update recipes and cooking tips. Developed on React JS managing an API.",
+        github: "https://github.com/dav31rg/eatable",
+        demo: "",
+        technologies: ["js", "react"],
+      },
+    ],
+  },
 };
 
 const spanishInfo = {
@@ -284,6 +286,7 @@ const spanishInfo = {
     { id: "education", label: "Educación" },
     { id: "contact", label: "Contacto" },
   ],
+
   personal: {
     ...englishInfo.personal,
     greeting:
@@ -298,6 +301,7 @@ const spanishInfo = {
       { id: "contact", label: "Contáctame" },
     ],
   },
+
   about: {
     ...englishInfo.about,
     label: "Quién soy",
@@ -335,6 +339,7 @@ const spanishInfo = {
         "Desarrollo de aplicaciones web, servicios backend y soluciones de software",
     },
   },
+
   skills: {
     ...englishInfo.skills,
     label: "Habilidades",
@@ -402,24 +407,39 @@ const spanishInfo = {
       },
     ],
   },
-  projects: [
-    {
-      ...englishInfo.projects[0],
-      title: "API de simulación de matrícula universitaria",
-      description:
-        "API para registrar y administrar matrículas de estudiantes universitarios, desarrollada con NestJS.",
-    },
-    {
-      ...englishInfo.projects[1],
-      title: "API de simulación de check-in",
-      description: "API que simula el proceso de check-in de una aerolínea.",
-    },
-    {
-      ...englishInfo.projects[2],
-      description:
-        "Aplicación para impulsar a cocineros independientes. Permite consultar, crear y actualizar recetas y consejos de cocina. Desarrollada con React y conectada a una API.",
-    },
-  ],
+
+  projects: {
+    label: "Proyectos personales",
+    title: "Proyectos personales y exploración tecnológica.",
+    subtitle:
+      "Una colección de proyectos que desarrollo en mi tiempo libre para explorar nuevas tecnologías, fortalecer mis habilidades y transformar ideas en soluciones de software.",
+    projectsDetail: [
+      {
+        title: "Uni Enrollment Simulation API",
+        description:
+          "This is an API designed for the registration and maintenance of student enrollments at a university, developed using NestJS.",
+        github: "https://github.com/dav31rg/uniMatricula-API",
+        demo: "",
+        technologies: ["typescript", "nestJs"],
+      },
+      {
+        title: "Check-In Simulation API",
+        description:
+          "This API is designed to simulate the check-in process for airlines",
+        github: "https://github.com/dav31rg/simulacionCheckInAerolinea-API",
+        demo: "",
+        technologies: ["ruby", "rails"],
+      },
+      {
+        title: "Eatable",
+        description:
+          "App to empower home cooks. You can see, create, and update recipes and cooking tips. Developed on React JS managing an API.",
+        github: "https://github.com/dav31rg/eatable",
+        demo: "",
+        technologies: ["js", "react"],
+      },
+    ],
+  },
 };
 
 export const portfolioContent = {

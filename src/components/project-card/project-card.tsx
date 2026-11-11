@@ -1,63 +1,72 @@
-import github from "../../assets/github.svg";
 import Button from "../ui/button";
+import Divider from "../ui/divider";
+import { GitHub, Eye } from "../ui/icons";
 
-interface Info {
-  theme: "light" | "dark";
+interface ProjectCardProps {
   project: {
     title: string;
     description: string;
-    image: string;
-    link: string;
-    textColor?: string;
-    backgroundColor?: string;
-    technologies: Array<string>;
+    technologies: string[];
+    github?: string;
+    demo?: string;
   };
 }
-const Cover: React.FC<Info> = ({ project, theme }) => {
-  const textColor = theme === "dark" ? "#ffffff" : project.textColor;
 
-  return (
-    <div
-      className="flex h-auto w-full flex-col justify-between gap-8 rounded-[20px] pb-4"
-      style={{
-        backgroundColor:
-          theme === "dark" ? "var(--surface-primary)" : project.backgroundColor,
-      }}
-    >
-      <h1 className="mt-4" style={{ color: textColor }}>
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
+  <article className="flex h-full flex-col gap-5 rounded-xs bg-white dark:bg-secondary p-8">
+    <div className="flex flex-col gap-2">
+      <h3 className="text-xl font-semibold text-(--text-color)">
         {project.title}
-      </h1>
-      <div>
-        <img
-          src={project.image}
-          className="h-auto w-full"
-          alt={`${project.title} image`}
-        />
-        <p className="p-4 text-justify" style={{ color: textColor }}>
-          {project.description}
-        </p>
-        <ul className="flex list-none justify-center gap-2">
-          {project.technologies.map((item, index) => (
-            <li key={index}>
-              <img src={item} className="h-6 w-6" alt={`${item} icon`} />
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
+      </h3>
+      <p className="text-sm text-tertiary dark:text-white/70">
+        {project.description}
+      </p>
+    </div>
+
+    <Divider />
+
+    <ul
+      aria-label={`${project.title} technologies`}
+      className="flex list-none flex-wrap items-center gap-3"
+    >
+      {project.technologies.map((technology, index) => (
+        <span
+          key={`${index}-${technology}`}
+          className="whitespace-nowrap rounded-xs bg-tertiary/10 dark:bg-secondary px-3 py-1 font-mono text-xs text-secondary dark:text-white"
+        >
+          {technology}
+        </span>
+      ))}
+    </ul>
+
+    <div className="mt-auto flex justify-end flex-wrap gap-3">
+      {project.github?.trim() && (
         <Button
-          href={project.link}
+          href={project.github}
           target="_blank"
           rel="noreferrer"
-          variant="ghost"
-          size="icon"
-          aria-label={`${project.title} GitHub repository`}
+          variant="secondary"
+          size="sm"
+          leftIcon={<GitHub className="size-4" />}
         >
-          <img className="w-11" src={github} alt="" />
+          GitHub
         </Button>
-      </div>
-    </div>
-  );
-};
+      )}
+      {project.demo?.trim() && (
+        <Button
+          href={project.demo}
+          target="_blank"
+          rel="noreferrer"
+          variant="primary"
+          size="sm"
 
-export default Cover;
+          leftIcon={<Eye className="size-4" />}
+        >
+          Live Demo
+        </Button>
+      )}
+    </div>
+  </article>
+);
+
+export default ProjectCard;

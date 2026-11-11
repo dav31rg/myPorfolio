@@ -7,7 +7,7 @@ import About from "./pages/about/about";
 import Experience from "./pages/experience/experience";
 import Hero from "./pages/home/home";
 import NotFound from "./pages/not-found/not-found";
-import Portfolio from "./pages/projects/projects";
+import Projects from "./pages/projects/projects";
 import Skills from "./pages/skills/skills";
 
 function App() {
@@ -49,12 +49,8 @@ function App() {
               />
               <About {...content.about} />
               <Skills info={content.skills} />
+              <Projects info={content.projects} />
               <Experience info={content.experience} labels={content.labels} />
-              <Portfolio
-                info={content.projects}
-                title={content.labels.projects}
-                theme={theme}
-              />
             </main>
           }
         />
