@@ -1,4 +1,6 @@
 import Badge from "../../components/ui/badge";
+import { Cloud, Database, Monitor, Server } from "../../components/ui/icons";
+import Divider from "../../components/ui/divider";
 
 interface SkillsProps {
   info: {
@@ -9,29 +11,45 @@ interface SkillsProps {
   };
 }
 
+const categoriesIcons = {
+  "Frontend": Monitor,
+  "Backend & Architecture": Server,
+  "Data & Integrations": Database,
+  "Cloud & Dev Tools": Cloud,
+};
+
 const Skills: React.FC<SkillsProps> = ({ info }) => {
   const categories = info.knowledge[0] ?? {};
+  const getIconComponent = (category: string) => {
+    const IconComponent =
+      categoriesIcons[category as keyof typeof categoriesIcons];
+    return IconComponent ? <IconComponent className="size-5" /> : null;
+  };
 
   return (
     <section id="skills" className="layout py-32 max-lg:py-8">
-      <Badge className="mb-4">02 / {info.label.toUpperCase()}</Badge>
+      <Badge>02 / {info.label.toUpperCase()}</Badge>
       <h2 className="text-4xl font-semibold max-lg:text-3xl">{info.title}</h2>
-      <p className="mt-4 max-w-3xl text-base text-tertiary">{info.subtitle}</p>
+      <p className="mt-1 max-w-3xl text-base text-tertiary">{info.subtitle}</p>
 
-      <div className="mt-10 grid w-full gap-5 md:grid-cols-2">
+      <div className="mt-12 w-full flex flex-wrap gap-5">
         {Object.entries(categories).map(([category, skills]) => (
           <article
             key={category}
-            className="flex flex-col gap-5 rounded-xl border border-secondary/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5"
+            className="flex flex-col flex-1 min-w-[250px] gap-5 rounded-lg bg-tertiary/10 p-6"
           >
-            <h3 className="text-lg font-semibold text-[var(--text-color)]">
-              {category}
-            </h3>
+            <div className="flex gap-2">
+              {getIconComponent(category)}
+              <h3 className="text-base font-semibold text-(--text-color)">
+                {category}
+              </h3>
+            </div>
+            <Divider />
             <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full bg-tertiary/10 px-3 py-1 text-sm text-secondary dark:text-white"
+                  className="whitespace-nowrap rounded-xs bg-white dark:bg-secondary px-3 py-1 font-mono text-xs text-secondary dark:text-white"
                 >
                   {skill}
                 </span>

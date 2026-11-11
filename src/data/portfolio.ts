@@ -111,9 +111,9 @@ const englishInfo = {
   },
   skills: {
     label: "Skills",
-    title: "Technical Skills & Knowledge",
+    title: "Technical skills across modern software development.",
     subtitle:
-      "A diverse set of technical skills and knowledge, ranging from frontend and backend development to cloud services and development tools.",
+      "Focused on practical experience, clean code, and reliable software solutions. A technology stack built through hands-on projects and continuous learning.",
     knowledge: [
       {
         Frontend: [
@@ -143,7 +143,7 @@ const englishInfo = {
           "RabbitMQ",
           "Strapi",
         ],
-        "Cloud & Development Tools": [
+        "Cloud & Dev Tools": [
           "Docker",
           "AWS",
           "Vercel",
@@ -338,20 +338,9 @@ const spanishInfo = {
   skills: {
     ...englishInfo.skills,
     label: "Habilidades",
-    title: "Habilidades y conocimientos técnicos",
+    title: "Habilidades técnicas en el desarrollo de software moderno.",
     subtitle:
-      "Experiencia en desarrollo frontend y backend, servicios en la nube y herramientas de desarrollo.",
-    knowledge: [
-      {
-        Frontend: englishInfo.skills.knowledge[0].Frontend,
-        "Backend y arquitectura":
-          englishInfo.skills.knowledge[0]["Backend & Architecture"],
-        "Datos e integraciones":
-          englishInfo.skills.knowledge[0]["Data & Integrations"],
-        "Nube y herramientas de desarrollo":
-          englishInfo.skills.knowledge[0]["Cloud & Development Tools"],
-      },
-    ],
+      "Enfocada en la experiencia práctica, el código limpio y las soluciones de software confiables. Un conjunto de tecnologías desarrollado a través de proyectos reales y aprendizaje continuo.",
   },
 
   experience: {
