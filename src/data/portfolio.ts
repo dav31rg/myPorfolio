@@ -114,6 +114,7 @@ const englishInfo = {
       time: "2024-01-01",
       years: "Years",
       buttonLabel: "Get in Touch",
+      buttonLink: "contact",
       title: "Production Experience",
       description: "Building web applications, backend services, and software solutions",
     },
