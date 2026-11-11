@@ -5,7 +5,7 @@ import type {
   ReactNode,
 } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "tertiary" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "icon";
 
 interface SharedProps {
@@ -38,6 +38,12 @@ const variants: Record<ButtonVariant, string> = {
     dark:text-white
     dark:hover:bg-tertiary/40 dark:focus-visible:ring-white
   `.trim(),
+  tertiary: `
+    bg-transparent text-tertiary
+    hover:text-primary focus-visible:ring-primary
+    dark:hover:text-primary
+    dark:focus-visible:ring-blue-400
+     `.trim(),
   outline: `
     border border-tertiary/10 bg-tertiary/3 text-tertiary
     hover:bg-tertiary/5 focus-visible:ring-primary
