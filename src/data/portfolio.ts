@@ -4,30 +4,19 @@ import arduino from "../assets/arduino.svg";
 import aws from "../assets/aws.svg";
 import cpp from "../assets/cpp.svg";
 import css from "../assets/css.svg";
-import docker from "../assets/docker.svg";
-import figma from "../assets/figma.svg";
-import gitLab from "../assets/git-lab.svg";
-import git from "../assets/git.svg";
-import github from "../assets/github.svg";
 import html from "../assets/html.svg";
 import js from "../assets/js.svg";
 import linux from "../assets/linux.svg";
 import location from "../assets/location.svg";
 import mail from "../assets/mail.svg";
 import mongoDB from "../assets/mongo-db.svg";
-import mySql from "../assets/my-sql.svg";
 import nestJs from "../assets/nest-js.svg";
 import nextJs from "../assets/next-js.svg";
-import nodeJs from "../assets/node-js.svg";
 import postgreSql from "../assets/postgre-sql.svg";
-import prisma from "../assets/prisma.svg";
 import projectEatable from "../assets/project-eatable.gif";
-import python from "../assets/python.svg";
 import rails from "../assets/rails.svg";
 import react from "../assets/react.svg";
-import redux from "../assets/redux.svg";
 import ruby from "../assets/ruby.svg";
-import sqLite from "../assets/sq-lite.svg";
 import typescript from "../assets/type-script.svg";
 import windows from "../assets/windows.svg";
 
@@ -116,43 +105,54 @@ const englishInfo = {
       buttonLabel: "Get in Touch",
       buttonLink: "contact",
       title: "Production Experience",
-      description: "Building web applications, backend services, and software solutions",
+      description:
+        "Building web applications, backend services, and software solutions",
     },
+  },
+  skills: {
+    label: "Skills",
+    title: "Technical Skills & Knowledge",
+    subtitle:
+      "A diverse set of technical skills and knowledge, ranging from frontend and backend development to cloud services and development tools.",
     knowledge: [
-      // Programming Languages / BI Tools:
-      typescript,
-      js,
-      ruby,
-      cpp,
-      python,
-      html,
-      css,
-
-      // Frameworks / Libraries:
-      react,
-      redux,
-      nextJs,
-      angular,
-      nestJs,
-      rails,
-
-      //environments
-      nodeJs,
-
-      // tools
-      postgreSql,
-      mongoDB,
-      sqLite,
-      mySql,
-      prisma,
-      docker,
-      aws,
-      linux,
-      git,
-      github,
-      gitLab,
-      figma,
-      arduino,
+      {
+        Frontend: [
+          "React",
+          "Next.js",
+          "Angular",
+          "Vue.js",
+          "Responsive Web Development",
+        ],
+        "Backend & Architecture": [
+          "Node.js",
+          "NestJS",
+          "Ruby on Rails",
+          "Python",
+          "REST APIs",
+          "Microservices",
+          "BFF",
+          "Microservices Architecture",
+        ],
+        "Data & Integrations": [
+          "PostgreSQL",
+          "MySQL",
+          "MongoDB",
+          "Prisma",
+          "GraphQL",
+          "Apollo Client",
+          "RabbitMQ",
+          "Strapi",
+        ],
+        "Cloud & Development Tools": [
+          "Docker",
+          "AWS",
+          "Vercel",
+          "Git",
+          "GitHub",
+          "GitLab",
+          "Postman",
+        ],
+      },
     ],
   },
   experience: {
@@ -331,9 +331,29 @@ const spanishInfo = {
       title: "Experiencia Profesional",
       buttonLabel: "Hablemos",
       buttonLink: "contact",
-      description: "Desarrollo de aplicaciones web, servicios backend y soluciones de software",
-    }
+      description:
+        "Desarrollo de aplicaciones web, servicios backend y soluciones de software",
+    },
   },
+  skills: {
+    ...englishInfo.skills,
+    label: "Habilidades",
+    title: "Habilidades y conocimientos técnicos",
+    subtitle:
+      "Experiencia en desarrollo frontend y backend, servicios en la nube y herramientas de desarrollo.",
+    knowledge: [
+      {
+        Frontend: englishInfo.skills.knowledge[0].Frontend,
+        "Backend y arquitectura":
+          englishInfo.skills.knowledge[0]["Backend & Architecture"],
+        "Datos e integraciones":
+          englishInfo.skills.knowledge[0]["Data & Integrations"],
+        "Nube y herramientas de desarrollo":
+          englishInfo.skills.knowledge[0]["Cloud & Development Tools"],
+      },
+    ],
+  },
+
   experience: {
     work: [
       {

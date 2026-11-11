@@ -8,6 +8,7 @@ import Experience from "./pages/experience/experience";
 import Hero from "./pages/home/home";
 import NotFound from "./pages/not-found/not-found";
 import Portfolio from "./pages/projects/projects";
+import Skills from "./pages/skills/skills";
 
 function App() {
   const [locale, setLocale] = useState<Locale>("en");
@@ -47,6 +48,7 @@ function App() {
                 info={content.personal}
               />
               <About {...content.about} />
+              <Skills info={content.skills} />
               <Experience info={content.experience} labels={content.labels} />
               <Portfolio
                 info={content.projects}
