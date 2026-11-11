@@ -86,30 +86,37 @@ const englishInfo = {
     ],
   },
   about: {
-    cv: "drive.google.com/file/d/1OTG2c8NLF2LrM1GnyZG6Dmn4NQM7-9AB/view?usp=sharing",
+    label: "About me",
     title: "Engineering Foundations. Building Modern Software Solutions.",
     subtitle:
       "Built on engineering principles and analytical thinking. Evolved from electronics and microcontrollers to modern web development and scalable software solutions.",
     description: [
       {
-        icon: typescript,
-        title: "TypeScript",
+        icon: "electronics",
+        title: "Engineering Foundation",
         description:
-          "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+          "Bachelor's background in Electronic Engineering, with a strong foundation in analytical thinking, technical problem-solving, and the integration of hardware and software.",
       },
       {
-        icon: react,
-        title: "React",
+        icon: "code",
+        title: "Full-Stack Development",
         description:
-          "React is a JavaScript library for building user interfaces. It makes it painless to create interactive UIs.",
+          "Building modern web applications and backend services with React, Next.js, Node.js, and NestJS. Focused on maintainable code, modular design, and reliable API integrations.",
       },
       {
-        icon: nextJs,
-        title: "Next.js",
+        icon: "teamwork",
+        title: "Teamwork & Continuous Learning",
         description:
-          "Next.js is a React framework that enables functionality such as server-side rendering and generating static websites for React-based web applications.",
+          "Committed to collaborative work, clear communication, and continuous improvement. Adaptable to new technologies, challenges, and evolving development practices.",
       },
     ],
+    timeExperience: {
+      time: "2024-01-01",
+      years: "Years",
+      buttonLabel: "Get in Touch",
+      title: "Production Experience",
+      description: "Building web applications, backend services, and software solutions",
+    },
     knowledge: [
       // Programming Languages / BI Tools:
       typescript,
@@ -292,30 +299,39 @@ const spanishInfo = {
   },
   about: {
     ...englishInfo.about,
+    label: "Quién soy",
     title:
       "Fundamentos de ingeniería. Creando soluciones de software modernas.",
     subtitle:
       "De la ingeniería al desarrollo web, aplicando pensamiento analítico para crear soluciones de software escalables y modernas.",
     description: [
       {
-        icon: typescript,
-        title: "TypeScript",
+        icon: "electronics",
+        title: "Formación en Ingeniería",
         description:
-          "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+          "Formación universitaria en Ingeniería Electrónica, con bases sólidas en pensamiento analítico, resolución de problemas técnicos e integración de hardware y software.",
       },
       {
-        icon: react,
-        title: "React",
+        icon: "code",
+        title: "Desarrollo Full Stack",
         description:
-          "React is a JavaScript library for building user interfaces. It makes it painless to create interactive UIs.",
+          "Desarrollo de aplicaciones web modernas y servicios backend con React, Next.js, Node.js y NestJS. Enfocada en código mantenible, diseño modular e integraciones confiables de APIs.",
       },
       {
-        icon: nextJs,
-        title: "Next.js",
+        icon: "teamwork",
+        title: "Trabajo en Equipo y Aprendizaje Continuo",
         description:
-          "Next.js is a React framework that enables functionality such as server-side rendering and generating static websites for React-based web applications.",
+          "Comprometido con el trabajo colaborativo, la comunicación efectiva y la mejora continua. Adaptable a nuevas tecnologías, desafíos y prácticas de desarrollo.",
       },
     ],
+    timeExperience: {
+      time: "2024-01-01",
+      years: "Años",
+      title: "Experiencia Profesional",
+      buttonLabel: "Hablemos",
+      buttonLink: "contact",
+      description: "Desarrollo de aplicaciones web, servicios backend y soluciones de software",
+    }
   },
   experience: {
     work: [
