@@ -13,9 +13,13 @@ interface SkillsProps {
 
 const categoriesIcons = {
   Frontend: Monitor,
+  "Desarrollo frontend": Monitor,
   "Backend & Architecture": Server,
+  "Backend y arquitectura": Server,
   "Data & Integrations": Database,
+  "Datos e integraciones": Database,
   "Cloud & Dev Tools": Cloud,
+  "Nube y herramientas de desarrollo": Cloud,
 };
 
 const Skills: React.FC<SkillsProps> = ({ info }) => {

@@ -422,8 +422,10 @@ const spanishInfo = {
       "Orientado al desarrollo de soluciones de software escalables y aplicaciones web modernas. Combino mi formación en Ingeniería Electrónica con experiencia en desarrollo full-stack para crear soluciones eficientes, confiables y centradas en las necesidades del usuario.",
     role: [
       "Desarrollador Full Stack",
+      "Desarrollador Backend",
+      "Desarrollador Frontend",
+      "Ingeniero de Software",
       "Ingeniero Electrónico",
-      "Especialista en Soporte Técnico",
     ],
     actions: [
       { id: "projects", label: "Ver Proyectos" },
@@ -437,7 +439,7 @@ const spanishInfo = {
     title:
       "Fundamentos de ingeniería. Creando soluciones de software modernas.",
     subtitle:
-      "De la ingeniería al desarrollo web, aplicando pensamiento analítico para crear soluciones de software escalables y modernas.",
+      "Basado en principios de ingeniería y pensamiento analítico. Mi trayectoria evolucionó desde la electrónica y los microcontroladores hasta el desarrollo web moderno y la creación de soluciones de software escalables.",
     description: [
       {
         icon: "electronics",
@@ -449,7 +451,7 @@ const spanishInfo = {
         icon: "code",
         title: "Desarrollo Full Stack",
         description:
-          "Desarrollo de aplicaciones web modernas y servicios backend con React, Next.js, Node.js y NestJS. Enfocada en código mantenible, diseño modular e integraciones confiables de APIs.",
+          "Desarrollo de aplicaciones web modernas y servicios backend con React, Next.js, Node.js y NestJS, con foco en código mantenible, diseño modular e integraciones confiables de API.",
       },
       {
         icon: "teamwork",
@@ -459,9 +461,9 @@ const spanishInfo = {
       },
     ],
     timeExperience: {
-      time: "2024-01-01",
+      time: "2023-12-01",
       years: "Años",
-      title: "Experiencia Profesional",
+      title: "Experiencia en entornos productivos",
       buttonLabel: "Hablemos",
       buttonLink: "contact",
       description:
@@ -474,65 +476,136 @@ const spanishInfo = {
     label: "Habilidades",
     title: "Habilidades técnicas en el desarrollo de software moderno.",
     subtitle:
-      "Enfocada en la experiencia práctica, el código limpio y las soluciones de software confiables. Un conjunto de tecnologías desarrollado a través de proyectos reales y aprendizaje continuo.",
+      "Enfocado en la experiencia práctica, el código limpio y las soluciones de software confiables. Un conjunto de tecnologías desarrollado a través de proyectos prácticos y aprendizaje continuo.",
+    knowledge: [
+      {
+        "Desarrollo frontend": [
+          "React",
+          "Next.js",
+          "Angular",
+          "Vue.js",
+          "Desarrollo web adaptable",
+        ],
+        "Backend y arquitectura": [
+          "Node.js",
+          "NestJS",
+          "Ruby on Rails",
+          "Python",
+          "APIs REST",
+          "Microservicios",
+          "BFF",
+          "Arquitectura de microservicios",
+        ],
+        "Datos e integraciones": [
+          "PostgreSQL",
+          "MySQL",
+          "MongoDB",
+          "Prisma",
+          "GraphQL",
+          "Apollo Client",
+          "RabbitMQ",
+          "Strapi",
+        ],
+        "Nube y herramientas de desarrollo": [
+          "Docker",
+          "AWS",
+          "Vercel",
+          "Git",
+          "GitHub",
+          "GitLab",
+          "Postman",
+        ],
+      },
+    ],
   },
 
   experience: {
     label: "Experiencia",
-    title: "Experiencia profesional creando soluciones de software.",
+    title: "Experiencia profesional desarrollando soluciones de software.",
     subtitle:
-      "Un recorrido por mis roles, los sectores en los que he trabajado y las tecnologías usadas para desarrollar soluciones confiables.",
-    leadRecommendation: "https://linkedin.com",
+      "Un recorrido por mis roles, los sectores en los que he colaborado y las tecnologías que utilizo para crear soluciones confiables.",
+    leadRecommendation:
+      "https://www.linkedin.com/in/davelrgobea/details/recommendations/#endorsements",
     work: [
       {
-        title: "Desarrollador de software",
-        company: "{c} Labs",
-        initialDate: "01/01/2023",
+        title: "Ingeniero de software",
+        company: "TEKTON LABS",
+        initialDate: "09/05/2024",
         endDate: "",
         description: [
           {
-            subtitle: "Sector aerolíneas",
+            subtitle: "Proyecto de aerolínea | Desarrollador Backend",
             contributions: [
-              "Contribución 1",
-              "Contribución 2",
-              "Contribución 3",
+              "Desarrollé y mantuve microservicios backend con Node.js, TypeScript y NestJS. Implementé una función para eliminar cuentas de forma masiva desde un microservicio, facilitando que integrantes no técnicos del equipo ejecutaran el proceso mediante una herramienta accesible.",
+              "Diseñé e implementé scripts de automatización con Python y Node.js para agilizar la eliminación masiva de cuentas, la migración de datos y la sincronización entre bases de datos internas y servicios externos.",
+              "Mejoré los flujos de registro, inicio de sesión y recuperación de contraseñas al corregir errores en microfrontends desarrollados con Vue.js y optimizar el manejo de datos y las operaciones con MongoDB.",
             ],
-            technologies: ["typescript", "react", "nextJs"],
+            technologies: [
+              "TypeScript",
+              "NestJS",
+              "Vue.js",
+              "Python",
+              "MongoDB",
+              "RabbitMQ",
+              "Git",
+              "GitLab",
+              "Microservicios",
+              "Microfrontends",
+              "BFF",
+            ],
           },
           {
-            subtitle: "Sector bancario",
+            subtitle: "Renovación del sitio corporativo | Desarrollador Full Stack",
             contributions: [
-              "Contribución 1",
-              "Contribución 2",
-              "Contribución 3",
+              "Desarrollé el MVP de un sitio web corporativo con Next.js y React, implementando interfaces adaptables a partir de diseños de Figma.",
+              "Construí componentes reutilizables y páginas adaptables, manteniendo la coherencia con las pautas de diseño y experiencia de usuario.",
+              "Configuré Strapi como CMS headless, definiendo tipos de contenido, componentes, relaciones y campos. Integré GraphQL con Apollo Client para obtener contenido dinámico.",
             ],
-            technologies: ["typescript", "react", "nextJs"],
+            technologies: ["Next.js", "Strapi", "GraphQL", "Apollo Client", "Figma"],
+          },
+          {
+            subtitle: "Proyecto de beneficios y fidelización | Desarrollador Full Stack",
+            contributions: [
+              "Adapté una plataforma web existente a los requisitos funcionales y visuales de un nuevo proyecto, desarrollando y modificando componentes frontend con Angular y TypeScript.",
+              "Desarrollé plantillas dinámicas de correo HTML con contenido personalizado, como información de usuarios, promociones, enlaces y códigos. Aseguré su compatibilidad con clientes de correo actuales y versiones antiguas de Microsoft Outlook, incluida Outlook 2010.",
+              "Colaboré en tareas de desarrollo backend con NestJS y MongoDB para respaldar las funciones de la aplicación y la gestión de datos.",
+            ],
+            technologies: ["NestJS", "Angular", "TypeScript", "Tailwind", "MongoDB"],
+          },
+          {
+            subtitle: "Proyecto del sector financiero | Desarrollador Full Stack",
+            contributions: [
+              "Desarrollé y mantuve funcionalidades de una aplicación web con Angular y TypeScript, creando componentes reutilizables e integrándolos con servicios backend.",
+              "Desarrollé y modifiqué endpoints de API REST y lógica de negocio backend con NestJS para respaldar las funcionalidades y el procesamiento de datos de la aplicación.",
+              "Realicé consultas y modificaciones en MongoDB, e investigué y resolví incidencias en componentes frontend y backend.",
+            ],
+            technologies: ["NestJS", "Angular", "TypeScript", "Tailwind", "MongoDB", "APIs REST"],
+          },
+          {
+            subtitle: "Proyecto de mapa interactivo | Desarrollador Full Stack",
+            contributions: [
+              "Desarrollé y mantuve funcionalidades frontend con React, Next.js y TypeScript, mejorando interfaces y diseños adaptables con Tailwind CSS.",
+              "Construí APIs REST y servicios backend con Node.js y NestJS, implementando lógica de negocio y operaciones de base de datos con PostgreSQL.",
+              "Integré servicios externos para validar números de identificación, asegurando un procesamiento de datos y una comunicación entre API confiables.",
+            ],
+            technologies: ["NestJS", "Next.js", "TypeScript", "Tailwind", "PostgreSQL", "APIs REST"],
           },
         ],
       },
       {
         title: "Desarrollador de software",
-        company: "{c} Lasdasd",
-        initialDate: "01/01/2022",
-        endDate: "01/01/2023",
+        company: "{c} Labs",
+        initialDate: "01/12/2023",
+        endDate: "01/05/2024",
         description: [
           {
-            subtitle: "Sector aerolíneas",
+            subtitle: "",
             contributions: [
-              "Contribución 1",
-              "Contribución 2",
-              "Contribución 3",
+              "Colaboré en la creación desde cero de una plataforma web y una aplicación móvil, junto con un equipo de tres desarrolladores, para gestionar y controlar el acceso a espacios físicos.",
+              "Desarrollé funcionalidades frontend y backend con Next.js e integré la API de eWeLink para controlar de forma remota los relés utilizados en la gestión de accesos físicos.",
+              "Colaboré en el desarrollo móvil con React Native e implementé el flujo de autenticación OTP para el registro e inicio de sesión, incluido el envío y la validación de códigos.",
             ],
-            technologies: ["typescript", "react", "nextJs"],
-          },
-          {
-            subtitle: "Sector bancario",
-            contributions: [
-              "Contribución 1",
-              "Contribución 2",
-              "Contribución 3",
-            ],
-            technologies: ["typescript", "react", "nextJs"],
+            technologies: ["TypeScript", "Next.js", "React Native", "PostgreSQL", "APIs REST", "eWeLink API"],
           },
         ],
       },
@@ -638,23 +711,23 @@ const spanishInfo = {
   },
 
   projects: {
-    label: "Proyectos personales",
-    title: "Proyectos personales y exploración tecnológica.",
+    label: "Proyectos destacados",
+    title: "Una selección de proyectos personales y soluciones de software.",
     subtitle:
       "Una colección de proyectos que desarrollo en mi tiempo libre para explorar nuevas tecnologías, fortalecer mis habilidades y transformar ideas en soluciones de software.",
     projectsDetail: [
       {
-        title: "Uni Enrollment Simulation API",
+        title: "API de simulación de matrícula universitaria",
         description:
-          "This is an API designed for the registration and maintenance of student enrollments at a university, developed using NestJS.",
+          "API desarrollada con NestJS para registrar y administrar matrículas estudiantiles en una universidad.",
         github: "https://github.com/dav31rg/uniMatricula-API",
         demo: "",
         technologies: ["typescript", "nestJs"],
       },
       {
-        title: "Check-In Simulation API",
+        title: "API de simulación de check-in",
         description:
-          "This API is designed to simulate the check-in process for airlines",
+          "API diseñada para simular el proceso de check-in de una aerolínea.",
         github: "https://github.com/dav31rg/simulacionCheckInAerolinea-API",
         demo: "",
         technologies: ["ruby", "rails"],
@@ -662,7 +735,7 @@ const spanishInfo = {
       {
         title: "Eatable",
         description:
-          "App to empower home cooks. You can see, create, and update recipes and cooking tips. Developed on React JS managing an API.",
+          "Aplicación para impulsar a quienes cocinan en casa. Permite consultar, crear y actualizar recetas y consejos de cocina. Desarrollada con React y conectada a una API.",
         github: "https://github.com/dav31rg/eatable",
         demo: "",
         technologies: ["js", "react"],
