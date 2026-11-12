@@ -13,7 +13,7 @@ const NotFound: React.FC<NotFoundProps> = ({ labels }) => {
   return (
     <section className="layout flex h-[80vh] flex-col items-center justify-center">
       <div className="w-[90%]">
-        <img className="w-[320px] rounded-[30px]" src={meeboNotFound} alt="404 image" />
+        <img className="w-[320px] rounded-xs" src={meeboNotFound} alt="404 image" />
         <h1>{labels.notFoundTitle}</h1>
         <span>
           {labels.notFoundMessage} &nbsp;

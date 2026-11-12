@@ -17,57 +17,74 @@ const Footer: React.FC<FooterProps> = ({
   description,
   backToTop,
   navigationLabel,
-}) => (
-  <footer className="border-t border-tertiary/15 bg-white dark:border-white/10 dark:bg-secondary">
-    <div className="layout flex flex-col items-start justify-between gap-6 py-8 sm:flex-row sm:items-center">
-      <p className="text-sm text-tertiary">
-        <span className="font-mono text-secondary dark:text-white">
-          {credit.toLocaleUpperCase()} {name.toUpperCase()}
-        </span>
-        <span className="mx-2" aria-hidden="true">
-          —
-        </span>
-        <span>{description}</span>
-      </p>
+}) => {
+  const handleBackToTop = () => {
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}`,
+    );
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
+  };
 
-      <nav
-        aria-label={navigationLabel}
-        className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
-      >
-        {socialMedia.map((social) => {
-          const isLinkedIn = social.icon === "linkedin";
-          const SocialIcon = isLinkedIn ? LinkedIn : GitHub;
-          const href = social.value.startsWith("http")
-            ? social.value
-            : `https://${social.value}`;
+  return (
+    <footer className="border-t border-tertiary/15 bg-white dark:border-white/10 dark:bg-secondary">
+      <div className="layout flex flex-col items-start justify-between gap-6 py-8 sm:flex-row sm:items-center">
+        <p className="text-sm text-tertiary">
+          <span className="font-mono text-secondary dark:text-white">
+            {credit.toLocaleUpperCase()} {name.toUpperCase()}
+          </span>
+          <span className="mx-2" aria-hidden="true">
+            —
+          </span>
+          <span>{description}</span>
+        </p>
 
-          return (
-            <Button
-              key={social.icon}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              variant="ghost"
-              size="sm"
-              className="font-mono"
-              leftIcon={<SocialIcon className="size-4" />}
-            >
-              {isLinkedIn ? "LinkedIn" : "GitHub"}
-            </Button>
-          );
-        })}
-        <Button
-          href="#home"
-          variant="ghost"
-          size="sm"
-          className="font-mono"
-          rightIcon={<ArrowUp className="size-4" />}
+        <nav
+          aria-label={navigationLabel}
+          className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
         >
-          {backToTop}
-        </Button>
-      </nav>
-    </div>
-  </footer>
-);
+          {socialMedia.map((social) => {
+            const isLinkedIn = social.icon === "linkedin";
+            const SocialIcon = isLinkedIn ? LinkedIn : GitHub;
+            const href = social.value.startsWith("http")
+              ? social.value
+              : `https://${social.value}`;
+
+            return (
+              <Button
+                key={social.icon}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                variant="ghost"
+                size="sm"
+                className="font-mono"
+                leftIcon={<SocialIcon className="size-4" />}
+              >
+                {isLinkedIn ? "LinkedIn" : "GitHub"}
+              </Button>
+            );
+          })}
+          <Button
+            type="button"
+            onClick={handleBackToTop}
+            variant="ghost"
+            size="sm"
+            className="font-mono"
+            rightIcon={<ArrowUp className="size-4" />}
+          >
+            {backToTop}
+          </Button>
+        </nav>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

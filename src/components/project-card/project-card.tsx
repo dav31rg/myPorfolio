@@ -13,7 +13,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
-  <article className="flex h-full flex-col gap-5 rounded-xs bg-white dark:bg-secondary p-8">
+  <article className="flex h-full flex-col gap-5 rounded-xs bg-white dark:bg-secondary p-4 lg:p-8">
     <div className="flex flex-col gap-2">
       <h3 className="text-xl font-semibold text-(--text-color)">
         {project.title}

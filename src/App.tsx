@@ -17,8 +17,6 @@ function App() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const content = portfolioContent[locale];
 
-  console.log("App locale:", locale);
-
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);

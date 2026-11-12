@@ -61,7 +61,7 @@ const About: React.FC<AboutProps> = ({
             />
           ))}
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between mt-12 p-8 rounded-lg border border-secondary/10 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
+        <div className="flex flex-col md:flex-row items-center justify-between mt-12 p-4 lg:p-8 rounded-xs border border-secondary/10 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
           <div>
             <h3 className="text-7xl font-bold text-primary">
               {calculateDateDuration(timeExperience.time).years}+

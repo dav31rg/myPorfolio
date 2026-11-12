@@ -7,7 +7,7 @@ interface LogoProps {
 const logoStyles = {
   container: "flex items-center gap-2 whitespace-nowrap",
   initials:
-    "h-10 w-10 flex shrink-0 items-center justify-center rounded-sm bg-secondary text-sm font-semibold font-mono text-white dark:border dark:border-secondary/10 dark:bg-tertiary/10",
+    "h-10 w-10 flex shrink-0 items-center justify-center rounded-xs bg-secondary text-sm font-semibold font-mono text-white dark:border dark:border-secondary/10 dark:bg-tertiary/10",
   details: "shrink-0 max-lg:hidden",
   name: "font-sans text-normal font-bold",
   role: "font-mono text-xs text-tertiary",

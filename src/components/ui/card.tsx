@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({
 }) => (
   <article
     className={clsx(
-      "flex flex-col gap-3 rounded-lg border border-secondary/10 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-white/5",
+      "flex flex-col gap-3 rounded-xs border border-secondary/10 bg-white p-4 lg:p-8 shadow-sm dark:border-white/10 dark:bg-white/5",
       className,
     )}
   >

@@ -27,11 +27,9 @@ interface ExperienceProps {
 }
 
 const Experience: React.FC<ExperienceProps> = ({ info, locale }) => {
-  console.log("Experience page locale:", locale);
-
   return (
     <div>
-      <section id="experience" className="layout py-32 max-lg:py-8">
+      <section id="experience" className="layout flex flex-col w-full py-32 max-lg:py-8">
         <Badge>04 / {info.label.toUpperCase()}</Badge>
         <h2 className="text-4xl font-semibold max-lg:text-3xl">{info.title}</h2>
         <p className="mt-1 max-w-3xl text-base text-tertiary">
@@ -48,7 +46,7 @@ const Experience: React.FC<ExperienceProps> = ({ info, locale }) => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-between p-8 bg-secondary/5 mt-10">
+        <div className="flex flex-wrap gap-4 justify-between p-4 xl:p-8 bg-secondary/5 mt-10">
           <div className="flex flex-wrap gap-4">
             <div className="size-10 flex shrink-0 items-center justify-center bg-secondary/3 rounded-xs">
               <Information className="size-5 text-primary" />

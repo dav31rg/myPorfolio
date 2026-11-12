@@ -76,7 +76,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   } = props;
 
   const classes = clsx(
-    "cursor-pointer inline-flex items-center justify-center gap-2 rounded-md font-medium no-underline transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 motion-reduce:transition-none",
+    "cursor-pointer inline-flex items-center justify-center gap-2 rounded-xs font-medium no-underline transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 motion-reduce:transition-none",
     variants[variant],
     sizes[size],
     className,

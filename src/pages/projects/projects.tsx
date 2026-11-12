@@ -21,7 +21,7 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ info }) => {
   return (
     <div className="bg-secondary/5">
-      <section id="projects" className="layout py-32 max-lg:py-8">
+      <section id="projects" className="layout flex flex-col py-32 max-lg:py-8">
         <Badge>03 / {info.label.toUpperCase()}</Badge>
         <h2 className="text-4xl font-semibold max-lg:text-3xl">{info.title}</h2>
         <p className="mt-1 max-w-3xl text-base text-tertiary">

@@ -29,12 +29,12 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ info }) => (
   <div>
-    <section id="contact" className="layout py-32 max-lg:py-8">
+    <section id="contact" className="layout flex flex-col py-32 max-lg:py-8">
       <Badge>06 / {info.label.toUpperCase()}</Badge>
       <h2 className="text-4xl font-semibold max-lg:text-3xl">{info.title}</h2>
       <p className="mt-1 max-w-3xl text-base text-tertiary">{info.subtitle}</p>
 
-      <article className="mt-12 mb-48 rounded-sm bg-tertiary/10 p-6 dark:bg-secondary">
+      <article className="mt-12 mb-48 rounded-xs bg-tertiary/10 p-4 xl:p-8 dark:bg-secondary">
         <header className="flex flex-wrap-reverse items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-xs bg-primary/10">

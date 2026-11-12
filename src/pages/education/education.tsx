@@ -39,7 +39,7 @@ const Education: React.FC<EducationProps> = ({ info }) => {
 
   return (
     <div className="bg-secondary/5">
-      <section id="education" className="layout py-32 max-lg:py-8">
+      <section id="education" className="flex flex-col layout py-32 max-lg:py-8">
         <Badge>05 / {info.label.toUpperCase()}</Badge>
         <h2 className="text-4xl font-semibold max-lg:text-3xl">{info.title}</h2>
         <p className="mt-1 max-w-3xl text-base text-tertiary">
@@ -50,7 +50,7 @@ const Education: React.FC<EducationProps> = ({ info }) => {
           {info.educationDetail.map((item) => (
             <article
               key={`${item.company}-${item.date}`}
-              className="min-w-62.5 flex flex-1 flex-col gap-5 rounded-lg bg-white p-6 shadow-sm dark:bg-secondary"
+              className="min-w-62.5 flex flex-1 flex-col gap-5 rounded-xs bg-white p-4 xl:p-8 shadow-sm dark:bg-secondary"
             >
               <header className="flex flex-col items-start gap-3">
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-xs bg-primary/10 text-primary">
@@ -73,7 +73,7 @@ const Education: React.FC<EducationProps> = ({ info }) => {
                   <div
                     key={`${detail.title}-${index}`}
                     className={clsx(
-                      "rounded-sm",
+                      "rounded-xs",
                       detail.border && "p-3 bg-secondary/5 dark:bg-white/5",
                     )}
                   >

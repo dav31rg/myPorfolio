@@ -43,7 +43,13 @@ const Header: React.FC<HeaderProps> = ({
     setIsMenuOpen(false);
   };
 
-  const getSectionHref = (id: string) => `/#${id}`;
+  const handleSectionNavigation = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    handleCloseMenu();
+  };
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -81,7 +87,8 @@ const Header: React.FC<HeaderProps> = ({
                 className="cursor-pointer transition-transform hover:scale-110 "
               >
                 <Button
-                  href={getSectionHref(item.id)}
+                  type="button"
+                  onClick={() => handleSectionNavigation(item.id)}
                   variant="ghost"
                   size="sm"
                   className="font-sans font-semibold"
@@ -101,8 +108,8 @@ const Header: React.FC<HeaderProps> = ({
                   className="animate-[menu-in_180ms_ease_both] motion-reduce:animate-none"
                 >
                   <Button
-                    href={getSectionHref(item.id)}
-                    onClick={handleCloseMenu}
+                    type="button"
+                    onClick={() => handleSectionNavigation(item.id)}
                     variant="ghost"
                     size="md"
                     className="w-full justify-start"

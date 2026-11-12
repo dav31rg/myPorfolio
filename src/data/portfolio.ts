@@ -27,8 +27,10 @@ const englishInfo = {
       "Focused on building scalable software solutions and modern web applications. Combining an Electronic Engineering background with full-stack development experience to create efficient, reliable, and user-centered solutions.",
     role: [
       "Full-Stack Developer",
-      "Electronics Engineer",
-      "Technical Support Specialist",
+      "Backend Developer",
+      "Frontend Developer",
+      "Software Engineer",
+      "Electronic Engineer",
     ],
     actions: [
       { id: "projects", label: "View Projects" },
@@ -47,11 +49,11 @@ const englishInfo = {
     socialMedia: [
       {
         icon: "github",
-        value: "github.com/dav31rg",
+        value: "https://www.github.com/dav31rg",
       },
       {
         icon: "linkedin",
-        value: "linkedin.com/in/davelrgobea",
+        value: "https://www.linkedin.com/in/davelrgobea",
       },
     ],
   },
@@ -82,7 +84,7 @@ const englishInfo = {
       },
     ],
     timeExperience: {
-      time: "2024-01-01",
+      time: "2023-12-01",
       years: "Years",
       buttonLabel: "Get in Touch",
       buttonLink: "contact",
@@ -144,7 +146,7 @@ const englishInfo = {
     title: "Professional experience building software solutions.",
     subtitle:
       "A look at my roles, the sectors I have supported, and the technologies used to deliver reliable software.",
-    leadRecommendation: "https://linkedin.com",
+    leadRecommendation: "https://www.linkedin.com/in/davelrgobea/details/recommendations/#endorsements",
     work: [
       {
         title: "Software Engineer",
@@ -155,47 +157,109 @@ const englishInfo = {
           {
             subtitle: "Airline Project | Backend Engineer",
             contributions: [
-              "Developed and maintained backend microservices using Node.js, TypeScript, and NestJS, implementing business logic, validations, and improvements across distributed services.",
+              "Developed and maintained backend microservices using Node.js, TypeScript, and NestJS. Implemented a bulk account deletion feature within a backend microservice, enabling non-technical team members to execute account removal processes through an accessible tool.",
               "Designed and implemented automation scripts using Python and Node.js to streamline bulk user account deletion, data migration, and synchronization across internal databases and external services.",
-              "Improved application workflows by fixing authentication and password recovery processes, optimizing data handling, and implementing database operations using MongoDB.",
+              "Improved user registration, login, and password recovery workflows by fixing bugs in Vue.js microfrontends and optimizing data handling and database operations with MongoDB.",
             ],
-            technologies: ["typescript", "react", "nextJs"],
+            technologies: [
+              "TypeScript",
+              "NestJS",
+              "Vue.js",
+              "Python",
+              "MongoDB",
+              "RabbitMQ",
+              "Git",
+              "GitLab",
+              "Microservices",
+              "Microfrontends",
+              "BFF",
+            ],
           },
           {
-            subtitle: "Banking sector",
+            subtitle: "Corporate Website Revamp | Full Stack Developer",
             contributions: [
-              "Contribution 1",
-              "Contribution 2",
-              "Contribution 3",
+              "Developed the MVP of a corporate website using Next.js and React, implementing responsive user interfaces based on Figma designs.",
+              "Built reusable components and responsive pages, ensuring consistency with the defined design and user experience guidelines.",
+              "Configured Strapi as a headless CMS, defining Content Types, components, relationships, and fields, and integrated GraphQL using Apollo Client to retrieve dynamic content.",
             ],
-
-            technologies: ["typescript", "react", "nextJs"],
+            technologies: [
+              "Next.js",
+              "Strapi",
+              "GraphQL",
+              "Apollo Client",
+              "Figma",
+            ],
+          },
+          {
+            subtitle: "Benefits and Loyalty Project | Full Stack Developer",
+            contributions: [
+              "Adapted an existing web platform to meet the functional and visual requirements of a new project, developing and modifying frontend components using Angular and TypeScript.",
+              "Developed dynamic HTML email templates with personalized content, including user information, promotions, links, and codes, ensuring compatibility with modern email clients and legacy versions of Microsoft Outlook (including Outlook 2010).",
+              "Contributed to backend development tasks using NestJS and MongoDB, supporting application functionality and data management.",
+            ],
+            technologies: [
+              "NestJS",
+              "Angular",
+              "TypeScript",
+              "Tailwind",
+              "MongoDB",
+            ],
+          },
+          {
+            subtitle: "Financial Sector Project | Full Stack Developer",
+            contributions: [
+              "Developed and maintained web application features using Angular and TypeScript, building reusable components and integrating them with backend services.",
+              "Built and modified REST API endpoints and backend business logic using NestJS, supporting application functionality and data processing.",
+              "Performed database queries and data modifications using MongoDB, while investigating and resolving issues across frontend and backend components.",
+            ],
+            technologies: [
+              "NestJS",
+              "Angular",
+              "TypeScript",
+              "Tailwind",
+              "MongoDB",
+              "REST APIs",
+            ],
+          },
+          {
+            subtitle: "Interactive Map Project | Full Stack Developer",
+            contributions: [
+              "Developed and maintained frontend features using React, Next.js, and TypeScript, improving user interfaces and responsive layouts with Tailwind CSS.",
+              "Built REST APIs and backend services using Node.js and NestJS, implementing business logic and database operations with PostgreSQL.",
+              "Integrated external services for identification number validation, ensuring reliable data processing and API communication.",
+            ],
+            technologies: [
+              "NestJS",
+              "Next.js",
+              "TypeScript",
+              "Tailwind",
+              "PostgreSQL",
+              "REST APIs",
+            ],
           },
         ],
       },
       {
         title: "Software Developer",
-        company: "{c} Lasdasd",
-        initialDate: "01/01/2022",
-        endDate: "01/01/2023",
+        company: "{c} Labs",
+        initialDate: "01/12/2023",
+        endDate: "01/05/2024",
         description: [
           {
-            subtitle: "Airline sector",
+            subtitle: "",
             contributions: [
-              "Contribution 1",
-              "Contribution 2",
-              "Contribution 3",
+              "Contributed to building a web platform and mobile application from scratch, working in a team of three developers to manage and control access to physical spaces.",
+              "Developed frontend and backend features using Next.js, integrating the eWeLink API to remotely control relays used in physical access management.",
+              "Contributed to mobile development using React Native, implementing the OTP authentication flow for user registration and login, including code delivery and validation.",
             ],
-            technologies: ["typescript", "react", "nextJs"],
-          },
-          {
-            subtitle: "Banking sector",
-            contributions: [
-              "Contribution 1",
-              "Contribution 2",
-              "Contribution 3",
+            technologies: [
+              "TypeScript",
+              "Next.js",
+              "React Native",
+              "PostgreSQL",
+              "REST APIs",
+              "eWeLink API",
             ],
-            technologies: ["typescript", "react", "nextJs"],
           },
         ],
       },
@@ -311,7 +375,7 @@ const englishInfo = {
         description:
           "This is an API designed for the registration and maintenance of student enrollments at a university, developed using NestJS.",
         github: "https://github.com/dav31rg/uniMatricula-API",
-        demo: "https://github.com/dav31rg/uniMatricula-API",
+        demo: "",
         technologies: ["typescript", "nestJs"],
       },
       {

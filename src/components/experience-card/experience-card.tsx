@@ -54,13 +54,12 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   experience,
   locale,
 }) => {
-  console.log("ExperienceCard locale:", locale);
   const isCurrentExperience =
     !experience.endDate.trim() ||
     /^(present|actualidad|current|now)$/i.test(experience.endDate.trim());
 
   return (
-    <article className="flex flex-col gap-5 rounded-sm bg-white p-6 dark:bg-secondary">
+    <article className="flex flex-col gap-5 rounded-xs bg-white border border-secondary/10 p-4 xl:p-8 dark:bg-secondary">
       <header className="flex flex-col gap-1">
         <div className="flex flex-wrap justify-between">
           <h3 className="text-lg text-secondary dark:text-white">
@@ -81,7 +80,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               />
             )}
             {getMonthYear(experience.initialDate, locale)} –{" "}
-            {experience.endDate || (locale === "es" ? "ACTUALIDAD" : "PRESENT")}
+            {getMonthYear(experience.endDate) || (locale === "es" ? "ACTUALIDAD" : "PRESENT")}
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-xs">
@@ -101,7 +100,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           className="flex flex-col gap-4 mb-14"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h4 className="whitespace-nowrap text-base">
+            <h4 className="text-base">
               {detail.subtitle}
             </h4>
 
