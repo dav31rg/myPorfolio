@@ -1,15 +1,5 @@
-import arduino from "../assets/arduino.svg";
-import cpp from "../assets/cpp.svg";
-import css from "../assets/css.svg";
-import html from "../assets/html.svg";
-import js from "../assets/js.svg";
-import linux from "../assets/linux.svg";
 import location from "../assets/location.svg";
 import mail from "../assets/mail.svg";
-import rails from "../assets/rails.svg";
-import react from "../assets/react.svg";
-import ruby from "../assets/ruby.svg";
-import windows from "../assets/windows.svg";
 
 // Icons from:
 // https://github.com/tandpfun/skill-icons?tab=readme-ov-file#icons-list
@@ -214,34 +204,100 @@ const englishInfo = {
 
   education: {
     label: "Education & Certifications",
-    title: "Engineering background and hands-on software development experience.",
+    title:
+      "Engineering background and hands-on software development experience.",
     subtitle:
       "A foundation in electronic engineering, complemented by focused training in full-stack and web development.",
     educationDetail: [
       {
-        title: "Full-Stack Web Dev",
-        company: "Codeable",
-        date: "NOV 2022 - JUN 2023",
-        technologies: [html, css, js, ruby, react, rails],
-        description:
-          "Codeable is an intensive 6-month full-time coding Bootcamp aimed at developing Full-Stack Web Developers. Additionally, the program strengthens skills in Technical English and Soft Skills such as leadership, teamwork, assertive communication, and effective presentations.",
+        title: "Academic Education",
+        company: "Bachelor's Degree in Electronic Engineering",
+        date: "Universidad Católica de Santa María (2006 - 2012)",
+        description: [
+          {
+            title: "Academic Focus",
+            description:
+              "Focused on electronics, telecommunications, digital systems, programming, and hardware-software integration.",
+            border: false,
+          },
+        ],
       },
       {
-        title: "Web Development (Self-Taught)",
-        company: "Platzi",
-        date: "2021 - 2022",
-        technologies: [html, css, js],
-        description:
-          "During nearly one year of self-directed learning, I followed Platzi's Web Development career, which provided a solid foundation in web development, front-end technologies, and practical project work, enhancing my problem-solving skills and ability to build dynamic websites.",
+        title: "Specialized Training",
+        company: "Specialized Programs & Bootcamps",
+        date: "Accredited Industry Certifications",
+        description: [
+          {
+            title: "Tecsup – CodiGo | Software Architecture Bootcamp",
+            description:
+              "180-hour specialized training program. Average grade: 18/20.",
+            border: true,
+          },
+          {
+            title: "Codeable | Full-Stack Web Development Bootcamp",
+            description:
+              "Six-month intensive training program focused on modern web development.",
+            border: true,
+          },
+        ],
       },
       {
-        title: "Electronic Engineer",
-        company: "UCSM",
-        date: "2006 - 2012",
-        technologies: [windows, linux, cpp, html, css, arduino],
-        description: "Bachelor's degree in electronic engineer.",
+        title: "Continuous Learning",
+        company: "Online Courses & Technical Training",
+        date: "Expanding my technical knowledge through online courses, specialized training, and continuous learning.",
+        description: [
+          {
+            title: "Artificial Intelligence – Coursera",
+            description:
+              "Google AI Essentials\nGenerative AI for Everyone\nEngineering for ChatGPT\nTrustworthy Generative AI",
+            border: true,
+          },
+          {
+            title: "SCADA Systems Training – Siemens",
+            description:
+              "Specialized training in SCADA systems.\nDuration: 1 week.",
+            border: true,
+          },
+          {
+            title: "Information Security – Udemy",
+            description:
+              "Information Security Awareness: An Introduction for UK SMEs (2 hours).",
+            border: true,
+          },
+          {
+            title: "Web Development & JavaScript – Platzi",
+            description:
+              "avaScript fundamentals, ECMAScript 6+, closures, scope, asynchronous programming, and array manipulation.\nDependency management with NPM and REST API integration.",
+            border: true,
+          },
+        ],
       },
     ],
+  },
+
+  contact: {
+    label: "Contact",
+    title: "Let's collaborate on scalable software solutions.",
+    subtitle:
+      "Open to Full-Stack Developer and Backend Developer opportunities, contributing to modern web applications and reliable software solutions.",
+    titleCard: "Direct Communication",
+    subtitlecard: "Get in Touch",
+    availabilityLabel: "Available for Engagements",
+    emailLabel: "Email address",
+    email: "davel.reymundo@gmail.com",
+    locationLabel: "Location & timezone",
+    location: "Perú",
+    timezone: "America/Lima (UTC−5)",
+    networksLabel: "Verified networks",
+    github: "https://github.com/dav31rg",
+    linkedin: "https://linkedin.com/in/davelrgobea",
+  },
+
+  footer: {
+    credit: "Built by",
+    description: "Software Engineering & Development Portfolio",
+    backToTop: "Back to top",
+    navigationLabel: "Footer links",
   },
 
   projects: {
@@ -421,28 +477,100 @@ const spanishInfo = {
 
   education: {
     label: "Educación y desarrollo profesional",
-    title: "Formación en ingeniería y experiencia práctica en desarrollo de software.",
+    title:
+      "Formación en ingeniería y experiencia práctica en desarrollo de software.",
     subtitle:
-      "Una base en ingeniería electrónica, complementada con formación enfocada en desarrollo web y Full Stack.",
+      "Una base en ingeniería electrónica, complementada con formación especializada y aprendizaje continuo en desarrollo de software.",
     educationDetail: [
       {
-        ...englishInfo.education.educationDetail[0],
-        title: "Desarrollo web Full Stack",
-        description:
-          "Codeable es un bootcamp intensivo de programación a tiempo completo de seis meses, enfocado en formar desarrolladores web Full Stack. El programa también fortalece el inglés técnico y habilidades blandas como liderazgo, trabajo en equipo, comunicación asertiva y presentaciones efectivas.",
+        title: "Formación académica",
+        company: "Título en Ingeniería Electrónica",
+        date: "Universidad Católica de Santa María (2006 - 2012)",
+        description: [
+          {
+            title: "Enfoque académico",
+            description:
+              "Formación en electrónica, telecomunicaciones, sistemas digitales, programación e integración de hardware y software.",
+            border: false,
+          },
+        ],
       },
       {
-        ...englishInfo.education.educationDetail[1],
-        title: "Desarrollo web (autodidacta)",
-        description:
-          "Durante casi un año de aprendizaje autónomo, seguí la carrera de Desarrollo Web de Platzi. Fortalecí mis bases de desarrollo web y tecnologías frontend mediante ejercicios y proyectos prácticos.",
+        title: "Formación especializada",
+        company: "Programas especializados y bootcamps",
+        date: "Certificaciones profesionales",
+        description: [
+          {
+            title: "Tecsup – CodiGo | Bootcamp de Arquitectura de Software",
+            description:
+              "Programa de formación especializada de 180 horas. Promedio: 18/20.",
+            border: true,
+          },
+          {
+            title: "Codeable | Bootcamp de Desarrollo Web Full Stack",
+            description:
+              "Programa intensivo de seis meses enfocado en el desarrollo web moderno.",
+            border: true,
+          },
+        ],
       },
       {
-        ...englishInfo.education.educationDetail[2],
-        title: "Ingeniería electrónica",
-        description: "Título profesional de Ingeniería Electrónica.",
+        title: "Aprendizaje continuo",
+        company: "Cursos en línea y formación técnica",
+        date: "Ampliando mis conocimientos técnicos mediante cursos en línea, formación especializada y aprendizaje continuo.",
+        description: [
+          {
+            title: "Inteligencia Artificial – Coursera",
+            description:
+              "Google AI Essentials\nIA generativa para todos\nIngeniería para ChatGPT\nIA generativa confiable",
+            border: true,
+          },
+          {
+            title: "Formación en sistemas SCADA – Siemens",
+            description:
+              "Formación especializada en sistemas SCADA.\nDuración: 1 semana.",
+            border: true,
+          },
+          {
+            title: "Seguridad de la información – Udemy",
+            description:
+              "Concientización sobre seguridad de la información: introducción para pequeñas y medianas empresas del Reino Unido (2 horas).",
+            border: true,
+          },
+          {
+            title: "Desarrollo web y JavaScript – Platzi",
+            description:
+              "Fundamentos de JavaScript, ECMAScript 6+, closures, scope, programación asíncrona y manipulación de arreglos.\nGestión de dependencias con NPM e integración de API REST.",
+            border: true,
+          },
+        ],
       },
     ],
+  },
+
+  contact: {
+    label: "Contacto",
+    title: "Colaboremos en soluciones de software escalables.",
+    subtitle:
+      "Abierto a oportunidades como desarrollador Full Stack y Backend, contribuyendo a aplicaciones web modernas y soluciones de software confiables.",
+    titleCard: "Comunicación directa",
+    subtitlecard: "Ponte en contacto",
+    availabilityLabel: "Disponible para nuevos proyectos",
+    emailLabel: "Correo electrónico",
+    email: "davel.reymundo@gmail.com",
+    locationLabel: "Ubicación y zona horaria",
+    location: "Perú",
+    timezone: "America/Lima (UTC−5)",
+    networksLabel: "Redes verificadas",
+    github: "https://github.com/dav31rg",
+    linkedin: "https://linkedin.com/in/davelrgobea",
+  },
+
+  footer: {
+    credit: "Desarrollado por",
+    description: "Portafolio de Ingeniería de Software y Desarrollo",
+    backToTop: "Volver al inicio",
+    navigationLabel: "Enlaces del pie de página",
   },
 
   projects: {

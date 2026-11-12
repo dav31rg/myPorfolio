@@ -64,7 +64,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <header className="flex flex-col gap-1">
         <div className="flex flex-wrap justify-between">
           <h3 className="text-lg text-secondary dark:text-white">
-            {experience.title}ssdfsdf
+            {experience.title}
           </h3>
           <span
             className={clsx(

@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import { portfolioContent, type Locale } from "./data/portfolio";
 import About from "./pages/about/about";
+import Contact from "./pages/contact/contact";
 import Education from "./pages/education/education";
 import Experience from "./pages/experience/experience";
 import Hero from "./pages/home/home";
@@ -55,12 +56,20 @@ function App() {
               <Projects info={content.projects} />
               <Experience info={content.experience} locale={locale} />
               <Education info={content.education} />
+              <Contact info={content.contact} />
             </main>
           }
         />
         <Route path="*" element={<NotFound labels={content.labels} />} />
       </Routes>
-      <Footer />
+      <Footer
+        name={content.personal.name}
+        socialMedia={content.personal.socialMedia}
+        credit={content.footer.credit}
+        description={content.footer.description}
+        backToTop={content.footer.backToTop}
+        navigationLabel={content.footer.navigationLabel}
+      />
     </BrowserRouter>
   );
 }
