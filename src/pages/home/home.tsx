@@ -1,6 +1,7 @@
 import RoleAnimation from "../../components/role-animation/role-animation";
 import Button from "../../components/ui/button";
 import { GitHub, LinkedIn } from "../../components/ui/icons";
+import { getDisplayUrl } from "../../utils/url";
 interface Info {
   info: {
     name: string;
@@ -44,17 +45,19 @@ const Hero: React.FC<Info> = ({ info }) => {
             <Button
               key={index}
               href={social.value}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="outline"
               size="sm"
               leftIcon={
                 social.icon === "linkedin" ? (
-                  <LinkedIn className="size-5" />
+                  <LinkedIn className="size-4" />
                 ) : (
-                  <GitHub className="size-5" />
+                  <GitHub className="size-4" />
                 )
               }
             >
-              {social.value}
+              {getDisplayUrl(social.value)}
             </Button>
           ))}
         </div>
