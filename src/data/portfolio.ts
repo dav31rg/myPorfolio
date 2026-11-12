@@ -33,7 +33,7 @@ const englishInfo = {
       "Electronic Engineer",
     ],
     actions: [
-      { id: "projects", label: "View Projects" },
+      { id: "experience", label: "View Experience" },
       { id: "contact", label: "Get in Touch" },
     ],
     contact: [
@@ -146,7 +146,7 @@ const englishInfo = {
     title: "Professional experience building software solutions.",
     subtitle:
       "A look at my roles, the sectors I have supported, and the technologies used to deliver reliable software.",
-    leadRecommendation: "https://www.linkedin.com/in/davelrgobea/details/recommendations/#endorsements",
+    leadRecommendation: "https://www.linkedin.com/in/davelrgobea",
     work: [
       {
         title: "Software Engineer",
@@ -525,7 +525,7 @@ const spanishInfo = {
     subtitle:
       "Un recorrido por mis roles, los sectores en los que he colaborado y las tecnologías que utilizo para crear soluciones confiables.",
     leadRecommendation:
-      "https://www.linkedin.com/in/davelrgobea/details/recommendations/#endorsements",
+      "https://www.linkedin.com/in/davelrgobea",
     work: [
       {
         title: "Ingeniero de software",

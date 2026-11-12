@@ -101,11 +101,11 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Mobile navigation */}
           {isMenuOpen && (
-            <ul className="absolute right-0 top-[4.6rem] hidden w-full list-none flex-col gap-4 bg-(--header-background) p-4 max-lg:flex">
+            <ul className="fixed inset-x-0 bottom-0 top-24 z-40 hidden w-full list-none flex-col items-center justify-center gap-4 overflow-y-auto bg-(--header-background) p-6 max-lg:flex">
               {info.map((item) => (
                 <li
                   key={item.id}
-                  className="animate-[menu-in_180ms_ease_both] motion-reduce:animate-none"
+                  className="w-full max-w-sm animate-[menu-in_180ms_ease_both] motion-reduce:animate-none"
                 >
                   <Button
                     type="button"

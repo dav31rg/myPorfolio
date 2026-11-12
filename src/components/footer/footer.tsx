@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer className="border-t border-tertiary/15 bg-white dark:border-white/10 dark:bg-secondary">
-      <div className="layout flex flex-col items-start justify-between gap-6 py-8 sm:flex-row sm:items-center">
+      <div className="layout flex flex-wrap items-center justify-center gap-3 py-8">
         <p className="text-sm text-tertiary">
           <span className="font-mono text-secondary dark:text-white">
             {credit.toLocaleUpperCase()} {name.toUpperCase()}
@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({
 
         <nav
           aria-label={navigationLabel}
-          className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
+          className="flex gap-10"
         >
           {socialMedia.map((social) => {
             const isLinkedIn = social.icon === "linkedin";
@@ -62,12 +62,15 @@ const Footer: React.FC<FooterProps> = ({
                 href={href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={isLinkedIn ? "LinkedIn" : "GitHub"}
                 variant="ghost"
                 size="sm"
                 className="font-mono"
-                leftIcon={<SocialIcon className="size-4" />}
+                leftIcon={<SocialIcon className="size-5" />}
               >
-                {isLinkedIn ? "LinkedIn" : "GitHub"}
+                <span className="hidden sm:inline">
+                  {isLinkedIn ? "LinkedIn" : "GitHub"}
+                </span>
               </Button>
             );
           })}
@@ -76,10 +79,10 @@ const Footer: React.FC<FooterProps> = ({
             onClick={handleBackToTop}
             variant="ghost"
             size="sm"
-            className="font-mono"
-            rightIcon={<ArrowUp className="size-4" />}
+            className="font-mono "
+            rightIcon={<ArrowUp className="size-5" />}
           >
-            {backToTop}
+            <span className="hidden sm:inline whitespace-nowrap">{backToTop}</span>
           </Button>
         </nav>
       </div>
