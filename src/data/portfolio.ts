@@ -428,7 +428,7 @@ const spanishInfo = {
       "Ingeniero Electrónico",
     ],
     actions: [
-      { id: "projects", label: "Ver Proyectos" },
+      { id: "experience", label: "Explora mi experiencia" },
       { id: "contact", label: "Contáctame" },
     ],
   },
