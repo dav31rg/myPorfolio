@@ -1,6 +1,7 @@
 import RoleAnimation from "../../components/role-animation/role-animation";
 import Button from "../../components/ui/button";
 import { GitHub, LinkedIn } from "../../components/ui/icons";
+import { scrollToSection } from "../../utils/navigation";
 import { getDisplayUrl } from "../../utils/url";
 interface Info {
   info: {
@@ -31,7 +32,8 @@ const Hero: React.FC<Info> = ({ info }) => {
           {info.actions.map((action, index) => (
             <Button
               key={action.id}
-              href={`#${action.id}`}
+              type="button"
+              onClick={() => scrollToSection(action.id)}
               variant={index === 0 ? "primary" : "secondary"}
               size="md"
               className="w-full sm:w-auto"

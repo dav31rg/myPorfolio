@@ -3,6 +3,7 @@ import type { Locale } from "../../data/portfolio";
 import Button from "../ui/button";
 import { Globe, Hamburger, Moon, Sun } from "../ui/icons";
 import Logo from "../ui/logo";
+import { scrollToSection } from "../../utils/navigation";
 
 interface HeaderProps {
   logo: {
@@ -44,10 +45,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   const handleSectionNavigation = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    scrollToSection(id);
     handleCloseMenu();
   };
 

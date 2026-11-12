@@ -3,6 +3,7 @@ import Button from "../../components/ui/button";
 import Card from "../../components/ui/card";
 import { Chip, Code, Group } from "../../components/ui/icons";
 import { calculateDateDuration } from "../../utils/date";
+import { scrollToSection } from "../../utils/navigation";
 
 interface AboutProps {
   label: string;
@@ -76,9 +77,10 @@ const About: React.FC<AboutProps> = ({
           </div>
           <div className="hidden md:block">
             <Button
+              type="button"
               variant="primary"
               size="md"
-              href={`#${timeExperience.buttonLink}`}
+              onClick={() => scrollToSection(timeExperience.buttonLink)}
             >
               {timeExperience.buttonLabel}
             </Button>
@@ -86,9 +88,10 @@ const About: React.FC<AboutProps> = ({
         </div>
         <div className="block md:hidden mt-4 w-full">
           <Button
+            type="button"
             variant="primary"
             size="md"
-            href={`#${timeExperience.buttonLink}`}
+            onClick={() => scrollToSection(timeExperience.buttonLink)}
           >
             {timeExperience.buttonLabel}
           </Button>
