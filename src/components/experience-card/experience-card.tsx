@@ -1,9 +1,6 @@
 import clsx from "clsx";
 import { calculateDateDuration, getMonthYear } from "../../utils/date";
-import Button from "../ui/button";
 import Divider from "../ui/divider";
-import { Check } from "../ui/icons";
-
 interface ExperienceCardProps {
   locale: "en" | "es";
   experience: {
@@ -80,7 +77,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
               />
             )}
             {getMonthYear(experience.initialDate, locale)} –{" "}
-            {getMonthYear(experience.endDate) || (locale === "es" ? "ACTUALIDAD" : "PRESENT")}
+            {getMonthYear(experience.endDate) ||
+              (locale === "es" ? "ACTUALIDAD" : "PRESENT")}
           </span>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-xs">
@@ -100,10 +98,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           className="flex flex-col gap-4 mb-14"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h4 className="text-base">
-              {detail.subtitle}
-            </h4>
-
+            <h4 className="text-base">{detail.subtitle}</h4>
           </div>
 
           <ul className="list-disc space-y-1 pl-5 text-sm text-tertiary dark:text-white/70">
