@@ -2,6 +2,7 @@ import Badge from "../../components/ui/badge";
 import Button from "../../components/ui/button";
 import Card from "../../components/ui/card";
 import { Chip, Code, Group } from "../../components/ui/icons";
+import { calculateDateDuration } from "../../utils/date";
 
 interface AboutProps {
   label: string;
@@ -30,26 +31,6 @@ const About: React.FC<AboutProps> = ({
   description,
   timeExperience,
 }) => {
-  const normalizeDate = (startDate: string) => {
-    const start = new Date(startDate);
-    const today = new Date();
-
-    let years = today.getFullYear() - start.getFullYear();
-    let months = today.getMonth() - start.getMonth();
-
-    // Ajustar si todavía no se ha cumplido el día de inicio
-    if (today.getDate() < start.getDate()) {
-      months--;
-    }
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    return { years, months };
-  };
-
   return (
     <div className="bg-secondary/5">
       <section
@@ -83,7 +64,7 @@ const About: React.FC<AboutProps> = ({
         <div className="flex flex-col md:flex-row items-center justify-between mt-12 p-8 rounded-lg border border-secondary/10 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
           <div>
             <h3 className="text-7xl font-bold text-primary">
-              {normalizeDate(timeExperience.time).years}+
+              {calculateDateDuration(timeExperience.time).years}+
               <span className="font-sans text-3xl font-normal text-secondary dark:text-tertiary">
                 {timeExperience.years}
               </span>

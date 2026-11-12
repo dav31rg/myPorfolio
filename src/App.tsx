@@ -4,6 +4,7 @@ import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import { portfolioContent, type Locale } from "./data/portfolio";
 import About from "./pages/about/about";
+import Education from "./pages/education/education";
 import Experience from "./pages/experience/experience";
 import Hero from "./pages/home/home";
 import NotFound from "./pages/not-found/not-found";
@@ -14,6 +15,8 @@ function App() {
   const [locale, setLocale] = useState<Locale>("en");
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const content = portfolioContent[locale];
+
+  console.log("App locale:", locale);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -50,7 +53,8 @@ function App() {
               <About {...content.about} />
               <Skills info={content.skills} />
               <Projects info={content.projects} />
-              <Experience info={content.experience} labels={content.labels} />
+              <Experience info={content.experience} locale={locale} />
+              <Education info={content.education} />
             </main>
           }
         />

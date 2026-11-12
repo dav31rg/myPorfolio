@@ -1,6 +1,4 @@
-import angular from "../assets/angular.svg";
 import arduino from "../assets/arduino.svg";
-import aws from "../assets/aws.svg";
 import cpp from "../assets/cpp.svg";
 import css from "../assets/css.svg";
 import html from "../assets/html.svg";
@@ -8,14 +6,9 @@ import js from "../assets/js.svg";
 import linux from "../assets/linux.svg";
 import location from "../assets/location.svg";
 import mail from "../assets/mail.svg";
-import mongoDB from "../assets/mongo-db.svg";
-import nestJs from "../assets/nest-js.svg";
-import nextJs from "../assets/next-js.svg";
-import postgreSql from "../assets/postgre-sql.svg";
 import rails from "../assets/rails.svg";
 import react from "../assets/react.svg";
 import ruby from "../assets/ruby.svg";
-import typescript from "../assets/type-script.svg";
 import windows from "../assets/windows.svg";
 
 // Icons from:
@@ -157,58 +150,74 @@ const englishInfo = {
   },
 
   experience: {
+    label: "Experience",
+    title: "Professional experience building software solutions.",
+    subtitle:
+      "A look at my roles, the sectors I have supported, and the technologies used to deliver reliable software.",
+    leadRecommendation: "https://linkedin.com",
     work: [
       {
-        title: "Software Engineer I",
-        company: "Tekton Labs",
-        date: "MAY 2024 - Present",
-        technologies: [
-          react,
-          nextJs,
-          angular,
-          nestJs,
-          typescript,
-          postgreSql,
-          mongoDB,
-          aws,
+        title: "Software Engineer",
+        company: "TEKTON LABS",
+        initialDate: "09/05/2024",
+        endDate: "",
+        description: [
+          {
+            subtitle: "Airline Project | Backend Engineer",
+            contributions: [
+              "Developed and maintained backend microservices using Node.js, TypeScript, and NestJS, implementing business logic, validations, and improvements across distributed services.",
+              "Designed and implemented automation scripts using Python and Node.js to streamline bulk user account deletion, data migration, and synchronization across internal databases and external services.",
+              "Improved application workflows by fixing authentication and password recovery processes, optimizing data handling, and implementing database operations using MongoDB.",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+          {
+            subtitle: "Banking sector",
+            contributions: [
+              "Contribution 1",
+              "Contribution 2",
+              "Contribution 3",
+            ],
+
+            technologies: ["typescript", "react", "nextJs"],
+          },
         ],
-        description:
-          "Currently, I work as a developer at Tekton Labs, where I contribute to the design and development of web applications using modern technologies. My role involves creating intuitive user interfaces and developing robust and scalable backend infrastructures, ensuring optimal performance and a high-quality user experience. I am also continuously learning and staying updated with the latest industry trends and best practices to enhance my skills and deliver better solutions.",
       },
       {
         title: "Software Developer",
-        company: "{c} Labs",
-        date: "DEC 2023 - MAY 2024",
-        technologies: [typescript, react, nextJs],
-        description:
-          "Cooperated in the development of a web and mobile app designed to provide access control services for condominiums and businesses. Actively contributed to product development using React Native for mobile and Next.js for web, and continuously learning about emerging technologies to ensure the delivery of high-quality products.",
-      },
-      {
-        title: "Junior Web Developer",
-        company: "Freelance",
-        date: "JUL 2023 - DEC 2023",
-        technologies: [js, react],
-        description:
-          "Contributed to the Anki.pe project development using ReactJS for hidden kitchen management. Implemented features, collaborated, and closely participated with the team to ensure consistency in project design and functionality.",
-      },
-      {
-        title: "IT Support Specialist",
-        company: "X-Laser",
-        date: "JUN 2017 - MAY 2024",
-        technologies: [windows, linux],
-        description:
-          "Responsible for managing the printer server, maintaining the database, also helping with IT support of PCs, networks, and printers. Have helped reduce customer complaints for repetitive requests, and have provided timely service.",
-      },
-      {
-        title: "Support Engineer",
-        company: "Cescorp",
-        date: "MAY 2015 - MAY 2017",
-        technologies: [windows, linux],
-        description:
-          "Resolved customer (IBM, Xerox, Lenovo, Mapfre) service complaints and provided timely customer service. Achieved being the second support engineer with more tickets resolved.",
+        company: "{c} Lasdasd",
+        initialDate: "01/01/2022",
+        endDate: "01/01/2023",
+        description: [
+          {
+            subtitle: "Airline sector",
+            contributions: [
+              "Contribution 1",
+              "Contribution 2",
+              "Contribution 3",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+          {
+            subtitle: "Banking sector",
+            contributions: [
+              "Contribution 1",
+              "Contribution 2",
+              "Contribution 3",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+        ],
       },
     ],
-    education: [
+  },
+
+  education: {
+    label: "Education & Certifications",
+    title: "Engineering background and hands-on software development experience.",
+    subtitle:
+      "A foundation in electronic engineering, complemented by focused training in full-stack and web development.",
+    educationDetail: [
       {
         title: "Full-Stack Web Dev",
         company: "Codeable",
@@ -349,59 +358,87 @@ const spanishInfo = {
   },
 
   experience: {
+    label: "Experiencia",
+    title: "Experiencia profesional creando soluciones de software.",
+    subtitle:
+      "Un recorrido por mis roles, los sectores en los que he trabajado y las tecnologías usadas para desarrollar soluciones confiables.",
+    leadRecommendation: "https://linkedin.com",
     work: [
       {
-        ...englishInfo.experience.work[0],
-        title: "Ingeniero de software I",
-        date: "MAY 2024 - ACTUALIDAD",
-        description:
-          "Trabajo como desarrollador en Tekton Labs, donde contribuyo al diseño y desarrollo de aplicaciones web con tecnologías modernas. Creo interfaces intuitivas y soluciones backend robustas y escalables, cuidando el rendimiento y la experiencia de usuario. También me mantengo al día con las tendencias y buenas prácticas de la industria.",
-      },
-      {
-        ...englishInfo.experience.work[1],
         title: "Desarrollador de software",
-        date: "DIC 2023 - MAY 2024",
-        description:
-          "Colaboré en el desarrollo de una aplicación web y móvil para brindar servicios de control de acceso a condominios y empresas. Contribuí al producto usando React Native para móviles y Next.js para la web, y aprendí sobre tecnologías emergentes para ofrecer soluciones de calidad.",
+        company: "{c} Labs",
+        initialDate: "01/01/2023",
+        endDate: "",
+        description: [
+          {
+            subtitle: "Sector aerolíneas",
+            contributions: [
+              "Contribución 1",
+              "Contribución 2",
+              "Contribución 3",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+          {
+            subtitle: "Sector bancario",
+            contributions: [
+              "Contribución 1",
+              "Contribución 2",
+              "Contribución 3",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+        ],
       },
       {
-        ...englishInfo.experience.work[2],
-        title: "Desarrollador web junior",
-        date: "JUL 2023 - DIC 2023",
-        description:
-          "Contribuí al desarrollo de Anki.pe, un proyecto para la gestión de cocinas ocultas. Implementé funcionalidades y colaboré con el equipo para mantener la coherencia del diseño y el funcionamiento del producto.",
-      },
-      {
-        ...englishInfo.experience.work[3],
-        title: "Especialista de soporte TI",
-        date: "JUN 2017 - MAY 2024",
-        description:
-          "Administré el servidor de impresión y la base de datos, y brindé soporte técnico para computadoras, redes e impresoras. Ayudé a reducir las consultas repetitivas de clientes y a ofrecer una atención oportuna.",
-      },
-      {
-        ...englishInfo.experience.work[4],
-        title: "Ingeniero de soporte",
-        date: "MAY 2015 - MAY 2017",
-        description:
-          "Resolví incidencias de servicio para clientes como IBM, Xerox, Lenovo y Mapfre, brindando atención oportuna. Llegué a ser el segundo ingeniero de soporte con más tickets resueltos.",
+        title: "Desarrollador de software",
+        company: "{c} Lasdasd",
+        initialDate: "01/01/2022",
+        endDate: "01/01/2023",
+        description: [
+          {
+            subtitle: "Sector aerolíneas",
+            contributions: [
+              "Contribución 1",
+              "Contribución 2",
+              "Contribución 3",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+          {
+            subtitle: "Sector bancario",
+            contributions: [
+              "Contribución 1",
+              "Contribución 2",
+              "Contribución 3",
+            ],
+            technologies: ["typescript", "react", "nextJs"],
+          },
+        ],
       },
     ],
-    education: [
+  },
+
+  education: {
+    label: "Educación y desarrollo profesional",
+    title: "Formación en ingeniería y experiencia práctica en desarrollo de software.",
+    subtitle:
+      "Una base en ingeniería electrónica, complementada con formación enfocada en desarrollo web y Full Stack.",
+    educationDetail: [
       {
-        ...englishInfo.experience.education[0],
+        ...englishInfo.education.educationDetail[0],
         title: "Desarrollo web Full Stack",
-        date: "NOV 2022 - JUN 2023",
         description:
           "Codeable es un bootcamp intensivo de programación a tiempo completo de seis meses, enfocado en formar desarrolladores web Full Stack. El programa también fortalece el inglés técnico y habilidades blandas como liderazgo, trabajo en equipo, comunicación asertiva y presentaciones efectivas.",
       },
       {
-        ...englishInfo.experience.education[1],
+        ...englishInfo.education.educationDetail[1],
         title: "Desarrollo web (autodidacta)",
         description:
           "Durante casi un año de aprendizaje autónomo, seguí la carrera de Desarrollo Web de Platzi. Fortalecí mis bases de desarrollo web y tecnologías frontend mediante ejercicios y proyectos prácticos.",
       },
       {
-        ...englishInfo.experience.education[2],
+        ...englishInfo.education.educationDetail[2],
         title: "Ingeniería electrónica",
         description: "Título profesional de Ingeniería Electrónica.",
       },
