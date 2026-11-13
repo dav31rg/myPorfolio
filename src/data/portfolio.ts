@@ -1,6 +1,3 @@
-import location from "../assets/location.svg";
-import mail from "../assets/mail.svg";
-
 // Icons from:
 // https://github.com/tandpfun/skill-icons?tab=readme-ov-file#icons-list
 
@@ -35,16 +32,6 @@ const englishInfo = {
     actions: [
       { id: "experience", label: "View Experience" },
       { id: "contact", label: "Get in Touch" },
-    ],
-    contact: [
-      {
-        icon: mail,
-        value: "davel.reymundo@gmail.com",
-      },
-      {
-        icon: location,
-        value: "Perú",
-      },
     ],
     socialMedia: [
       {

@@ -9,7 +9,6 @@ interface Info {
     greeting: string;
     role: string[];
     actions: Array<{ id: string; label: string }>;
-    contact: Array<{ icon: string; value: string }>;
     socialMedia: Array<{ icon: string; value: string }>;
   };
 }
