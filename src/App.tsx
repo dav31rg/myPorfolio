@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import { portfolioContent, type Locale } from "./data/portfolio";
@@ -13,34 +13,45 @@ import Projects from "./pages/projects/projects";
 import Skills from "./pages/skills/skills";
 
 function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
+}
+
+function AppContent() {
   const [locale, setLocale] = useState<Locale>("en");
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const content = portfolioContent[locale];
+  const location = useLocation();
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
   return (
-    <BrowserRouter>
-      <Header
-        logo={content.logo}
-        info={content.header}
-        locale={locale}
-        onLocaleChange={setLocale}
-        changeLanguageLabel={content.labels.changeLanguage}
-        theme={theme}
-        onThemeChange={() =>
-          setTheme((current) => (current === "light" ? "dark" : "light"))
-        }
-        themeButtonLabel={
-          theme === "light"
-            ? content.labels.darkTheme
-            : content.labels.lightTheme
-        }
-        navigationLabel={content.labels.navigation}
-        toggleMenuLabel={content.labels.toggleMenu}
-      />
+    <>
+      {location.pathname === "/" && (
+        <Header
+          logo={content.logo}
+          info={content.header}
+          locale={locale}
+          onLocaleChange={setLocale}
+          changeLanguageLabel={content.labels.changeLanguage}
+          theme={theme}
+          onThemeChange={() =>
+            setTheme((current) => (current === "light" ? "dark" : "light"))
+          }
+          themeButtonLabel={
+            theme === "light"
+              ? content.labels.darkTheme
+              : content.labels.lightTheme
+          }
+          navigationLabel={content.labels.navigation}
+          toggleMenuLabel={content.labels.toggleMenu}
+        />
+      )}
       <Routes>
         <Route
           path="/"
@@ -68,7 +79,7 @@ function App() {
         backToTop={content.footer.backToTop}
         navigationLabel={content.footer.navigationLabel}
       />
-    </BrowserRouter>
+    </>
   );
 }
 

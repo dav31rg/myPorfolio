@@ -144,8 +144,8 @@ const englishInfo = {
           {
             subtitle: "Airline Project | Backend Engineer",
             contributions: [
-              "Developed and maintained backend microservices using Node.js, TypeScript, and NestJS. Implemented a bulk account deletion feature within a backend microservice, enabling non-technical team members to execute account removal processes through an accessible tool.",
-              "Designed and implemented automation scripts using Python and Node.js to streamline bulk user account deletion, data migration, and synchronization across internal databases and external services.",
+              "Enabled non-technical team members to execute bulk account deletion processes through an accessible tool by implementing a new feature in a NestJS microservice using Node.js and TypeScript.",
+              "Streamlined bulk user account deletion, data migration, and synchronization processes across internal databases and external services by developing automation scripts in Python.",
               "Improved user registration, login, and password recovery workflows by fixing bugs in Vue.js microfrontends and optimizing data handling and database operations with MongoDB.",
             ],
             technologies: [
@@ -165,9 +165,9 @@ const englishInfo = {
           {
             subtitle: "Corporate Website Revamp | Full Stack Developer",
             contributions: [
-              "Developed the MVP of a corporate website using Next.js and React, implementing responsive user interfaces based on Figma designs.",
-              "Built reusable components and responsive pages, ensuring consistency with the defined design and user experience guidelines.",
-              "Configured Strapi as a headless CMS, defining Content Types, components, relationships, and fields, and integrated GraphQL using Apollo Client to retrieve dynamic content.",
+              "Delivered the MVP of a corporate website by developing responsive user interfaces with Next.js and React based on Figma designs.",
+              "Improved UI consistency and maintainability by building reusable components and responsive pages aligned with design and user experience guidelines.",
+              "Enabled dynamic content management and integration by configuring Strapi as a headless CMS, defining Content Types, components, relationships, and fields, and integrating GraphQL through Apollo Client.",
             ],
             technologies: [
               "Next.js",
@@ -180,9 +180,9 @@ const englishInfo = {
           {
             subtitle: "Benefits and Loyalty Project | Full Stack Developer",
             contributions: [
-              "Adapted an existing web platform to meet the functional and visual requirements of a new project, developing and modifying frontend components using Angular and TypeScript.",
-              "Developed dynamic HTML email templates with personalized content, including user information, promotions, links, and codes, ensuring compatibility with modern email clients and legacy versions of Microsoft Outlook (including Outlook 2010).",
-              "Contributed to backend development tasks using NestJS and MongoDB, supporting application functionality and data management.",
+              "Adapted an existing web platform to meet the functional and visual requirements of a new project by developing and modifying frontend components using Angular and TypeScript.",
+              "Enhanced email communication with dynamic and personalized content by developing HTML email templates featuring user information, promotions, links, and codes, ensuring compatibility with modern email clients and legacy versions of Microsoft Outlook, including Outlook 2010.",
+              "Supported backend functionality and data management by contributing to backend development tasks using NestJS and MongoDB.",
             ],
             technologies: [
               "NestJS",
@@ -195,9 +195,9 @@ const englishInfo = {
           {
             subtitle: "Financial Sector Project | Full Stack Developer",
             contributions: [
-              "Developed and maintained web application features using Angular and TypeScript, building reusable components and integrating them with backend services.",
-              "Built and modified REST API endpoints and backend business logic using NestJS, supporting application functionality and data processing.",
-              "Performed database queries and data modifications using MongoDB, while investigating and resolving issues across frontend and backend components.",
+              "Enhanced web application functionality and maintainability by developing new features, building reusable components, and integrating them with backend services using Angular and TypeScript.",
+              "Implemented and improved backend functionality by building and modifying REST API endpoints and business logic using NestJS to support application features and data processing.",
+              "Improved data management and issue resolution by performing MongoDB queries and data modifications, while investigating and resolving issues across frontend and backend components.",
             ],
             technologies: [
               "NestJS",
@@ -237,7 +237,7 @@ const englishInfo = {
             contributions: [
               "Contributed to building a web platform and mobile application from scratch, working in a team of three developers to manage and control access to physical spaces.",
               "Developed frontend and backend features using Next.js, integrating the eWeLink API to remotely control relays used in physical access management.",
-              "Contributed to mobile development using React Native, implementing the OTP authentication flow for user registration and login, including code delivery and validation.",
+              "Implemented OTP-based authentication in the mobile application using React Native, supporting user registration and login through code delivery and validation.",
             ],
             technologies: [
               "TypeScript",
